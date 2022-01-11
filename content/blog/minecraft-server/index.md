@@ -6,42 +6,39 @@ description: "Over-engineering a Minecraft server sounds fun!"
 
 ## Intro
 
-Minecraft is a great medium to toy around with cutting-edge technologies, and recently many tutorials talking about them. However, in this post, we deploy them in production which presents more challenges and problem-solving.
+Minecraft is a great medium to toy around with cutting-edge technologies, and many tutorials talking about them recently. However, in this post, we design and deploy them in production which presents more challenges and problem-solving.
 
 ![architecture](./architecture.png)
 
-> **_NOTE:_** Building a Minecraft Server isn't all about using **Paper** or **Velocity**
+> **_NOTE:_** Building a Minecraft Server isn't all about using **Paper** or **Velocity**.
 
 ![infra](./infra.png)
 
-> **_NOTE:_** We will deep dive into this infrastructure and what problem it solves
+> **_NOTE:_** We will deep dive into this infrastructure and what problem it solves.
 
 ## Problems
 
-I will share a problem first and then a way I solved it. Many interesting problems are common and already solved by the tech community.
+I will share a problem first and a way I solved it. Many interesting problems are common and already solved by the tech community.
 
-### How can a team work together on the server?
+### How can a team work together to build the server?
 
-Use `Git` for tracking changes in any files, but before we use the version control system `Git`, we need to figure out what files need to be tracked, and put any unrelated files like logs, and user data into `.gitignore`.
+![git](./git.png)
+
+> **_NOTE:_** **Git** is a version control system for tracking changes in any set of files
+
+Before we use `Git`, we need to figure out what files need to be tracked, and put any unrelated files like logs, and user data into `.gitignore`.
 
 ```sh
 # plugins
-**/plugins/Pl3xMap/web/tiles
-**/plugins/Pl3xMap/web/images
-**/plugins/Pl3xMap/web/js
-**/plugins/Pl3xMap/web/css
-**/plugins/Pl3xMap/data
 **/plugins/GriefPreventionData/Logs
 **/plugins/GriefPreventionData/PlayerData
+**/plugins/GriefPreventionData/softMute.txt
 **/plugins/LuckPerms/translations
 **/plugins/LuckPerms/libs
 **/plugins/WorldGuard/cache
 **/plugins/WorldGuard/worlds
 **/plugins/WorldEdit/.archive-unpack
 **/plugins/WorldEdit/sessions
-**/plugins/GriefPreventionData/softMute.txt
-**/plugins/CreativeManager/data
-**/plugins/CreativeManager/data.db
 
 # smp
 **/smp/data
@@ -66,21 +63,21 @@ Use `Git` for tracking changes in any files, but before we use the version contr
 **/velocity/plugins/luckperms/translations
 ```
 
-<!-- ![gitignore](./gitignore.png)
-
-> **_NOTE:_** A giant list of ignored files including logs, data, and images -->
+> **_NOTE:_** A giant list of ignored files including logs, data, and images
 
 Sometimes, the config that we want to track has meaningless changes made by the server. We can solve the issue by using a one-way file synchronization system.
 
-1. When the source file is updated in Git, replace the file used by the server
-2. When the file is updated by the server, keep using it but don't sync the changes to Git
-3. Note if the server added some missing properties to a file, it is not tracked. Even if it gets overwritten, the server will just add the missing properties again, therefore there is no harm but you just won't know
+1. When the source file is updated in Git, replace the file used by the server.
+2. When the file is updated by the server, keep using it but don't sync the changes to Git.
+3. Note if the server added some missing properties to a file, it is not tracked. Even if it gets overwritten, the server will just add the missing properties again, therefore there is no harm but you just won't know.
 
 ![properties](./properties.png)
 
 > **_NOTE:_** We don't want to track useless updates like updated timestamps, or the configs get a random order.
 
 ### Why do I need containers?
+
+![docker](./docker.png)
 
 Containers allow apps to be easily and rapidly deployed, patched, or scaled.
 Containers accelerate development, test, and production cycles.
@@ -96,15 +93,13 @@ Minecraft has many containers available and they are well-maintained:
 
 We should use a database if the plugin supports it and most competent plugin developers will support MySQL. My three reasons for picking databases over flat files:
 
-1. Databases have standard interface SQL or NoSQL, but there are no automation in flat files
-2. Databases are more flexible, reliable, and performant
-3. Databases improved storage efficiency and security
+1. Databases have standard interface SQL or NoSQL, but there are no automation in flat files.
+2. Databases are more flexible, reliable, and performant.
+3. Databases improved storage efficiency and security.
 
 ### How can I see what is happening and what players are doing?
 
-When you run a Minecraft server, you don't have much insight into what is happening unless you are logged in the game.
-
-The following web apps are used to increase the visibility of your Minecraft server, and they run in your browser.
+When you run a Minecraft server, you don't have much insight into what is happening unless you are logged in the game. The following web apps are used to increase the visibility of your Minecraft server, and they run in your browser.
 
 ### Map
 
@@ -112,21 +107,21 @@ BlueMap supports 2D/3D/player perspective, real-time player positions, and more.
 
 ![BlueMap](./maps.png)
 
-> **_NOTE:_** BlueMap generates 3d-maps of the Minecraft worlds and render them real-time in your browser
+> **_NOTE:_** BlueMap generates 3d-maps of the Minecraft worlds and render them real-time in your browser.
 
 I fronted `BlueMap` with `Nginx` because BlueMap's internal web server is not robust enough. I also enabled `Cloudflare` caching for the map to save cost.
 
 ![CloudFlare](./cloudflare.png)
 
-> **_NOTE:_** **Cloudflare** is the world’s #1 ranked Content Delivery Network, and you can use it for free
+> **_NOTE:_** **Cloudflare** is the world’s #1 ranked Content Delivery Network, and you can use it for free.
 
 ### Player Statistics
 
 ![stats](./stats.png)
 
-> **_NOTE:_** **MinecraftStats** exports hundreds of in-game statistics so that users can view them in the browser
+> **_NOTE:_** **MinecraftStats** exports hundreds of in-game statistics so that users can view them in the browser.
 
-We can create a sidecar container that mounts the read-only Minecraft server volume and uses Python to export player stats into JSON files. The container will auto-detect files changes and push them to GitHub. GitHub Pages automatically build and deploy the stats web page
+We can create a sidecar container that mounts the read-only Minecraft server volume and uses Python to export player stats into JSON files. The container will auto-detect files changes and push them to GitHub. GitHub Pages automatically build and deploy the stats web page.
 
 ![GitHub](./github.png)
 
@@ -144,19 +139,19 @@ Introducing `Grafana`, `Prometheus`, and `AlertManager` to our infrastructure.
 
 ![smp](./smp.png)
 
-> **_NOTE:_** Minecraft Prometheus Exporter plugin exports Minecraft stats for Prometheus
+> **_NOTE:_** Minecraft Prometheus Exporter plugin exports Minecraft stats for Prometheus.
 
 ![velocity](./velocity.png)
 
-> **_NOTE:_** Bungeecord Prometheus Exporter plugin exports Bungeecord/Velocity stats for Prometheus
+> **_NOTE:_** Bungeecord Prometheus Exporter plugin exports Bungeecord/Velocity stats for Prometheus.
 
 ![alerting](./alerting.png)
 
-> **_NOTE:_** AlertManager notifies discord, and sends me a text message when the server is down
+> **_NOTE:_** AlertManager notifies discord, and sends me a text message when the server is down.
 
 ![wither](./wither.png)
 
-> **_NOTE:_** I made the dashboard publicly accessible for players so they also have insights. In this case, an unbounded wither farm generated over 3K skulls and is causing server lag
+> **_NOTE:_** I made the dashboard publicly accessible for players so they also have insights. In this case, an unbounded wither farm generated over 3K skulls and is causing server lag.
 
 ### How can I search through my server logs?
 
@@ -197,19 +192,21 @@ You can deploy ELK stack in one command using [docker-elk](https://github.com/de
 
 There are many ways to send a log to ElasticSearch. You could use `filebeat` to tail the `latest.log`, or use a `logstash` module that works with Minecraft server log4j.
 
-However, we want something generic that works with our containerized Minecraft server or any containers. So we use a logstash agent to send docker container logs to `Redis` for temporary storage. And a central logstash agent will pull from `Redis` and push them to `ElasticSearch`. Finally, we have `Kibana` that reads from `ElasticSearch` and visualizes the logs
+However, we want something generic that works with our containerized Minecraft server or any containers. So we use a logstash agent to send docker container logs to `Redis` for temporary storage. And a central logstash agent will pull from `Redis` and push them to `ElasticSearch`. Finally, we have `Kibana` that reads from `ElasticSearch` and visualizes the logs.
 
 ![kibana](./kibana.png)
 
-> **_NOTE:_** You can visualize, filter, and search Minecraft server logs
+> **_NOTE:_** You can visualize, filter, and search Minecraft server logs.
 
 ### How do I setup all of these technologies?
 
-**Ansible** does just that. It is an open-source software provisioning, configuration management, and application-deployment tool enabling infrastructure as code
+![ansible logo](./ansible_logo.png)
+
+**Ansible** does just that. It is an open-source software provisioning, configuration management, and application-deployment tool enabling infrastructure as code.
 
 ![ansible](./ansible.png)
 
-> **_NOTE:_** **Ansible** automates setting up everything
+> **_NOTE:_** **Ansible** automates setting up everything.
 
 ### How do I fix crashes in production?
 
@@ -217,25 +214,25 @@ Sometimes everything runs well in the local development environment, but the ser
 
 ![error](./error.png)
 
-> **_NOTE:_** Searching for errors for the past 12 hours in the log
+> **_NOTE:_** Searching for errors for the past 12 hours in the log.
 
 ![error2](./error2.png)
 
-> **_NOTE:_** Java is hung when opening files and crashed the server
+> **_NOTE:_** Java is hung when opening files and crashed the server.
 
 ![error3](./error3.png)
 
-> **_NOTE:_** Error spiked at 20:30, 17:05, 16:25, and 15:48
+> **_NOTE:_** Error spiked at 20:30, 17:05, 16:25, and 15:48.
 
-After looking at various metrics for CPU, memory, network, and storage, we found the issue in the storage
+After looking at various metrics for CPU, memory, network, and storage, we found the issue in the storage.
 
 ![aws](./aws.png)
 
-> **_NOTE:_** Read bandwidth also spiked at 20:30, 17:05, 16:25, and 15:48
+> **_NOTE:_** Read bandwidth also spiked at 20:30, 17:05, 16:25, and 15:48.
 
 Turns out when the operating system is running out of memory, so it writes to a swapfile. A swap is a space on a disk that is used when the amount of physical RAM is full, but the speed of the disk just can't keep up. When swapfile hijacked the storage I/O, Java I/O threads will just hang and time out. Therefore, the solution was to increase the ram of the operating system or decrease the ram allocation of other containers.
 
-> Fun Fact: RAM is 4 to 7 times faster than a Solid State Drive
+> Fun Fact: RAM is 4 to 7 times faster than a Solid State Drive.
 
 ## The End
 

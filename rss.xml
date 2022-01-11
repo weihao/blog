@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://weihao.github.io/blog</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 11 Jan 2022 22:52:23 GMT</lastBuildDate><item><title><![CDATA[Building a Minecraft Server With State of the Art Technologies]]></title><description><![CDATA[Intro Minecraft is a great medium to toy around with cutting-edge technologies, and recently many tutorials talking about them. However, in…]]></description><link>https://weihao.github.io/blog/minecraft-server/</link><guid isPermaLink="false">https://weihao.github.io/blog/minecraft-server/</guid><pubDate>Sat, 01 Jan 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Intro&lt;/h2&gt;
-&lt;p&gt;Minecraft is a great medium to toy around with cutting-edge technologies, and recently many tutorials talking about them. However, in this post, we deploy them in production which presents more challenges and problem-solving.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://weihao.github.io/blog</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 11 Jan 2022 23:36:18 GMT</lastBuildDate><item><title><![CDATA[Building a Minecraft Server With State of the Art Technologies]]></title><description><![CDATA[Intro Minecraft is a great medium to toy around with cutting-edge technologies, and many tutorials talking about them recently. However, in…]]></description><link>https://weihao.github.io/blog/minecraft-server/</link><guid isPermaLink="false">https://weihao.github.io/blog/minecraft-server/</guid><pubDate>Sat, 01 Jan 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Intro&lt;/h2&gt;
+&lt;p&gt;Minecraft is a great medium to toy around with cutting-edge technologies, and many tutorials talking about them recently. However, in this post, we design and deploy them in production which presents more challenges and problem-solving.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1260px; &quot;
@@ -32,7 +32,7 @@
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; Building a Minecraft Server isn’t all about using &lt;strong&gt;Paper&lt;/strong&gt; or &lt;strong&gt;Velocity&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; Building a Minecraft Server isn’t all about using &lt;strong&gt;Paper&lt;/strong&gt; or &lt;strong&gt;Velocity&lt;/strong&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
@@ -66,29 +66,55 @@
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; We will deep dive into this infrastructure and what problem it solves&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; We will deep dive into this infrastructure and what problem it solves.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2&gt;Problems&lt;/h2&gt;
-&lt;p&gt;I will share a problem first and then a way I solved it. Many interesting problems are common and already solved by the tech community.&lt;/p&gt;
-&lt;h3&gt;How can a team work together on the server?&lt;/h3&gt;
-&lt;p&gt;Use &lt;code class=&quot;language-text&quot;&gt;Git&lt;/code&gt; for tracking changes in any files, but before we use the version control system &lt;code class=&quot;language-text&quot;&gt;Git&lt;/code&gt;, we need to figure out what files need to be tracked, and put any unrelated files like logs, and user data into &lt;code class=&quot;language-text&quot;&gt;.gitignore&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;I will share a problem first and a way I solved it. Many interesting problems are common and already solved by the tech community.&lt;/p&gt;
+&lt;h3&gt;How can a team work together to build the server?&lt;/h3&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/f067e6216f3ef7cc163196fe0b4e120b/1cfc2/git.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 55.55555555555556%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABm0lEQVQoz63RMU9TURQH8P+9xEBCJzUsJp0gRTwNcG6LAU55PA3q5Ll10NWYODj6HXQRjauTgwYYSNjYWHDhEzj4FbTv3VcR41ZzH63pUKqD/+Sfe6Zfzs0BhtLxDXTa5/2qjKzdRP6giXRpEpv9JouX/sxjkynjzDN++WUUyqbwzubq0FHGQVLFi6MerlWA1QWgVYdJlyewuQis37gAO/UO372LmC2UUcTZO5z5hpmZg0kIZqtRMTdrJYjbPIFbS8DaReCPdgnYiATvakF5O1dnu94BVWCjDghhXghbQpiNm47dsPDOlJhyGpSPg/KHTPld7/DErhIetQivhfBcCG+EsL9OmIqY0CjQO3SVbVc5grtBuZcpv8yUP/cetlboOl4ldewI4YkQ9oTwVgiTERsNKiNXLg/w7T5PB+WPQflLR/npblpFUsd7IXwSwmMhNIVwRwhX/wrmyia+mfKVoO7ez3YTl2eBFmFBCKkQpgbIcEcmP/9uiWb9+dQ37LbMDA4yqO13PBgThtCgbE/u1vBspRI3NP+M/O/8Bopwmpk4Gr8tAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;git&quot;
+        title=&quot;git&quot;
+        src=&quot;/blog/static/f067e6216f3ef7cc163196fe0b4e120b/1cfc2/git.png&quot;
+        srcset=&quot;/blog/static/f067e6216f3ef7cc163196fe0b4e120b/6bdcf/git.png 315w,
+/blog/static/f067e6216f3ef7cc163196fe0b4e120b/f058b/git.png 630w,
+/blog/static/f067e6216f3ef7cc163196fe0b4e120b/1cfc2/git.png 900w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;Git&lt;/strong&gt; is a version control system for tracking changes in any set of files&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Before we use &lt;code class=&quot;language-text&quot;&gt;Git&lt;/code&gt;, we need to figure out what files need to be tracked, and put any unrelated files like logs, and user data into &lt;code class=&quot;language-text&quot;&gt;.gitignore&lt;/code&gt;.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;# plugins
-**/plugins/Pl3xMap/web/tiles
-**/plugins/Pl3xMap/web/images
-**/plugins/Pl3xMap/web/js
-**/plugins/Pl3xMap/web/css
-**/plugins/Pl3xMap/data
 **/plugins/GriefPreventionData/Logs
 **/plugins/GriefPreventionData/PlayerData
+**/plugins/GriefPreventionData/softMute.txt
 **/plugins/LuckPerms/translations
 **/plugins/LuckPerms/libs
 **/plugins/WorldGuard/cache
 **/plugins/WorldGuard/worlds
 **/plugins/WorldEdit/.archive-unpack
 **/plugins/WorldEdit/sessions
-**/plugins/GriefPreventionData/softMute.txt
-**/plugins/CreativeManager/data
-**/plugins/CreativeManager/data.db
 
 # smp
 **/smp/data
@@ -111,14 +137,14 @@
 **/velocity/plugins/luckperms/luckperms-h2.mv.db
 **/velocity/plugins/luckperms/libs
 **/velocity/plugins/luckperms/translations&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;!-- ![gitignore](./gitignore.png)
-
-&gt; **_NOTE:_** A giant list of ignored files including logs, data, and images --&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; A giant list of ignored files including logs, data, and images&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;Sometimes, the config that we want to track has meaningless changes made by the server. We can solve the issue by using a one-way file synchronization system.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;When the source file is updated in Git, replace the file used by the server&lt;/li&gt;
-&lt;li&gt;When the file is updated by the server, keep using it but don’t sync the changes to Git&lt;/li&gt;
-&lt;li&gt;Note if the server added some missing properties to a file, it is not tracked. Even if it gets overwritten, the server will just add the missing properties again, therefore there is no harm but you just won’t know&lt;/li&gt;
+&lt;li&gt;When the source file is updated in Git, replace the file used by the server.&lt;/li&gt;
+&lt;li&gt;When the file is updated by the server, keep using it but don’t sync the changes to Git.&lt;/li&gt;
+&lt;li&gt;Note if the server added some missing properties to a file, it is not tracked. Even if it gets overwritten, the server will just add the missing properties again, therefore there is no harm but you just won’t know.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
@@ -153,6 +179,39 @@
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; We don’t want to track useless updates like updated timestamps, or the configs get a random order.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3&gt;Why do I need containers?&lt;/h3&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1260px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/002878c853fedc6129c1e51bc8c096c1/9b29b/docker.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 56.19047619047619%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC2ElEQVQoz2XSyU/TQRQH8FcgVFkUSRcotGwt/GZAQcIeWdqhv2lpKxTLXhbBkDZQCrJFEHBLrRRpEGIioJBoiAFBRSMXIonevJgY48V/wXjwQgzIGEqJEOfyMof5zHvzHQAAwBoK8bVtoCozQ2phCYSMPxdI7cOgaLAZYlu7bTLHyFpU19gOMAYqkwXirXaJsrJBIer3QKK5HhRWO8ibHeBbiFDAhEKKvhxSqBHimzpAVdMCSlNVlrRz9Kto0MPEg+NM2jn6S97UUSFc+gSi4Qfm8MmVL1H2obyYtqsi+TFQcwByOhNkcUmAqBESmuxJ0fahH5IBN5P0uX9Lnbd2JYPjTNJ1kykvWXWRrsWG4LlNFnZn4XtcfXuGvLEDZO0DAT4Q+zrkIessghSTRZh2oSgn4vrMt9CpV3snHm/9CZ1YZien3+yFTK/vhd1f2RHObf4MmVhmYufthcz0tExOdzHwCgBkIyUcA9ML8iGq0SksShDFnHa4PsDdFwzcq9si97PdoMnXu4ETazuB7uUdgWuFRdhufNaeAmmKrlyWrK8ITjZUAscbjo7MQ1qxGmLntwSycitEmltzjd757f63myz+0QYDzzqDey9ZwNhTFur0vE8wW2VcoQZyz3GQZKqGpIo6wBr+Xyi+YNSlkJudARJxJBT0jMCU65pqcWPda51d+ijs9r4L73RPS5p79ftJJ5qqQdzSJ1BYLvsg7A8WDr8M9qE8YI0WkFobh7V6I8RyZwAgsmDMC3ViiChUSuXn83IyVvebKNUpU0tIECJUiAkVoWPgwSYAHdykxYRWIQ0/k1qq603XG81YW9bDacssHG8giOgeIkLNWMM7EKE2TGgLIhT5DcFRMNAfTh0m1IgJ7cWEDmBCixGhs4jwekxoPib0CSa0DWt8tRYTWnN4Hv0/sg8MxoSaMKHRmFAFJrQMEV6ACb/fOUKEJmNCYzGhan8VH77fIfgX9knthG/LneEAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;docker&quot;
+        title=&quot;docker&quot;
+        src=&quot;/blog/static/002878c853fedc6129c1e51bc8c096c1/78612/docker.png&quot;
+        srcset=&quot;/blog/static/002878c853fedc6129c1e51bc8c096c1/6bdcf/docker.png 315w,
+/blog/static/002878c853fedc6129c1e51bc8c096c1/f058b/docker.png 630w,
+/blog/static/002878c853fedc6129c1e51bc8c096c1/78612/docker.png 1260w,
+/blog/static/002878c853fedc6129c1e51bc8c096c1/7ca1f/docker.png 1890w,
+/blog/static/002878c853fedc6129c1e51bc8c096c1/9b204/docker.png 2520w,
+/blog/static/002878c853fedc6129c1e51bc8c096c1/9b29b/docker.png 3840w&quot;
+        sizes=&quot;(max-width: 1260px) 100vw, 1260px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Containers allow apps to be easily and rapidly deployed, patched, or scaled.
 Containers accelerate development, test, and production cycles.
 Minecraft has many containers available and they are well-maintained:&lt;/p&gt;
@@ -167,13 +226,12 @@ Minecraft has many containers available and they are well-maintained:&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;We should use a database if the plugin supports it and most competent plugin developers will support MySQL. My three reasons for picking databases over flat files:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Databases have standard interface SQL or NoSQL, but there are no automation in flat files&lt;/li&gt;
-&lt;li&gt;Databases are more flexible, reliable, and performant&lt;/li&gt;
-&lt;li&gt;Databases improved storage efficiency and security&lt;/li&gt;
+&lt;li&gt;Databases have standard interface SQL or NoSQL, but there are no automation in flat files.&lt;/li&gt;
+&lt;li&gt;Databases are more flexible, reliable, and performant.&lt;/li&gt;
+&lt;li&gt;Databases improved storage efficiency and security.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3&gt;How can I see what is happening and what players are doing?&lt;/h3&gt;
-&lt;p&gt;When you run a Minecraft server, you don’t have much insight into what is happening unless you are logged in the game.&lt;/p&gt;
-&lt;p&gt;The following web apps are used to increase the visibility of your Minecraft server, and they run in your browser.&lt;/p&gt;
+&lt;p&gt;When you run a Minecraft server, you don’t have much insight into what is happening unless you are logged in the game. The following web apps are used to increase the visibility of your Minecraft server, and they run in your browser.&lt;/p&gt;
 &lt;h3&gt;Map&lt;/h3&gt;
 &lt;p&gt;BlueMap supports 2D/3D/player perspective, real-time player positions, and more.&lt;/p&gt;
 &lt;p&gt;&lt;span
@@ -210,7 +268,7 @@ Minecraft has many containers available and they are well-maintained:&lt;/p&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; BlueMap generates 3d-maps of the Minecraft worlds and render them real-time in your browser&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; BlueMap generates 3d-maps of the Minecraft worlds and render them real-time in your browser.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;I fronted &lt;code class=&quot;language-text&quot;&gt;BlueMap&lt;/code&gt; with &lt;code class=&quot;language-text&quot;&gt;Nginx&lt;/code&gt; because BlueMap’s internal web server is not robust enough. I also enabled &lt;code class=&quot;language-text&quot;&gt;Cloudflare&lt;/code&gt; caching for the map to save cost.&lt;/p&gt;
 &lt;p&gt;&lt;span
@@ -244,7 +302,7 @@ Minecraft has many containers available and they are well-maintained:&lt;/p&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;Cloudflare&lt;/strong&gt; is the world’s #1 ranked Content Delivery Network, and you can use it for free&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;Cloudflare&lt;/strong&gt; is the world’s #1 ranked Content Delivery Network, and you can use it for free.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3&gt;Player Statistics&lt;/h3&gt;
 &lt;p&gt;&lt;span
@@ -281,9 +339,9 @@ Minecraft has many containers available and they are well-maintained:&lt;/p&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;MinecraftStats&lt;/strong&gt; exports hundreds of in-game statistics so that users can view them in the browser&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;MinecraftStats&lt;/strong&gt; exports hundreds of in-game statistics so that users can view them in the browser.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;We can create a sidecar container that mounts the read-only Minecraft server volume and uses Python to export player stats into JSON files. The container will auto-detect files changes and push them to GitHub. GitHub Pages automatically build and deploy the stats web page&lt;/p&gt;
+&lt;p&gt;We can create a sidecar container that mounts the read-only Minecraft server volume and uses Python to export player stats into JSON files. The container will auto-detect files changes and push them to GitHub. GitHub Pages automatically build and deploy the stats web page.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 939px; &quot;
@@ -386,7 +444,7 @@ Minecraft has many containers available and they are well-maintained:&lt;/p&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; Minecraft Prometheus Exporter plugin exports Minecraft stats for Prometheus&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; Minecraft Prometheus Exporter plugin exports Minecraft stats for Prometheus.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
@@ -422,7 +480,7 @@ Minecraft has many containers available and they are well-maintained:&lt;/p&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; Bungeecord Prometheus Exporter plugin exports Bungeecord/Velocity stats for Prometheus&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; Bungeecord Prometheus Exporter plugin exports Bungeecord/Velocity stats for Prometheus.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
@@ -455,7 +513,7 @@ Minecraft has many containers available and they are well-maintained:&lt;/p&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; AlertManager notifies discord, and sends me a text message when the server is down&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; AlertManager notifies discord, and sends me a text message when the server is down.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
@@ -490,7 +548,7 @@ Minecraft has many containers available and they are well-maintained:&lt;/p&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; I made the dashboard publicly accessible for players so they also have insights. In this case, an unbounded wither farm generated over 3K skulls and is causing server lag&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; I made the dashboard publicly accessible for players so they also have insights. In this case, an unbounded wither farm generated over 3K skulls and is causing server lag.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3&gt;How can I search through my server logs?&lt;/h3&gt;
 &lt;p&gt;Minecraft server uses log4j and outputs the log to &lt;code class=&quot;language-text&quot;&gt;latest.log&lt;/code&gt;, and also compresses logs into gzip archive files.&lt;/p&gt;
@@ -521,28 +579,27 @@ Minecraft has many containers available and they are well-maintained:&lt;/p&gt;
 &lt;p&gt;You can deploy ELK stack in one command using &lt;a href=&quot;https://github.com/deviantony/docker-elk&quot;&gt;docker-elk&lt;/a&gt;!&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 770px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 600px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/blog/static/9d1f8af96696c1f93a7c97123815fd0a/f4b77/elk.png&quot;
+    href=&quot;/blog/static/bd924bc09d97ac4372a3db189c8f8486/0a47e/elk.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 72.06349206349208%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACNUlEQVQ4y32Ty27TUBCGveRFeAEkHoANj4B4A/ZIIFas2HZRsQJxW7DoAlVISICgKqUqbaloA6FCSasktRM7ce34kvh+4n7Ix3KapIXFSOOZ8X/mn/lHieOYyqIomloQBGRZxngcEIbhhXz1Pft/YcpioCgSE4GmaRwe/qZ2sM9gYJKm6RzgZSYBZ1+rfMcZEqc5a6tLHO6v4XrBNC9EJsGTJCFNk6lfYSiVUxakxEmC6zi0TlRurDzm0cYHSDKCKEQIwc7uHs3mMZZl0x8MZPemaTIajc4pFzPq9nQajSN6usEkz3EtiytvXnN/exMywSgsAQ9qv2i1O3ieh23bWJbF0HHkzOcou67HiaqViSQhiyPe7mzSMbqcTQRRXFLO81wua9bSf1H2/RGWbcvXc0BtD2l3LE60PnpPlx2qmibzvu/juK70ZxejLErA9z1O7TGt2gv+vL/Kp5fX+Li6hOe5TITg+94P2u2OnJ+qagxMc05GyixY2WlEnELj2zLW+nW6G7fZXX+G0WshxIQwLHVZMKpsFkNZlExRXGxx4EVs1Y/RRxlnQByVdXJmU9mkLDakzF9JSJbl/Kp/ZuXuPb7cfEjtwXMMtSsXVVDe+LrF5ta2nLXR7zMejy92eB6ICIOYev0d+8uvUG895eedJ+gdjTRL5TabR8c0mke4nsfpqTWVywXAMljROsONQhpGB923SNKEeHopQl7LZZQv7bBcTIw7dNC1LqbRl9IoAP53w1WHfwGIHB0JOBHQ6gAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 33.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAA7EAAAOxAGVKw4bAAABq0lEQVQoz02Ry2sTURjFB/wPxI1LNyLiQkQFQanEggpdqcv6D7gruBRBF+5ciRR8gI+KK6uCCyktwTY2ikaklMbb2jQzeZTJTOJMknklc+9PZiYN/eBy7v3udw7n3KspIA5qRK15hn6FpJSSqBSHyEFntE+WGt1nKB0Pv7CJvyIIi39RsURT4S7W6hRB8RBy7SJy0GavVNjA+3qYqHJn1IgzMZkdB6Uq/YmHuGcf0HtTTHva09lHXL9witzjj9xdtxO/uEOXEIn0aziLB+gVjxEnOipT6kZuiuLnGjNHLlG493LsXHsx/57zN6eZnFvk9nqHWA5Ytb7wu/OLftfhxuRRJq6cYGr5E6+NrZS4bObZigSFpTwHz53k+IdnfDbrmcMQuFUuca20wH3xHR9o+y1sz0oHXj2f4/Tlq5xZesfsTjntGa5BiEdpY4Pc2yfkvi0w/SNPEMdojt3GNk3KzQZW5x89x2GUDCklva5LVa9S3qngeH321xD406ghDB3dtoiTyEIINoWgur2doa4TRdGYVDMMDN3AbDYJg2D8Vns/vVuvp9x2q5VG/g/hFO60prRw1wAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;elk&quot;
         title=&quot;elk&quot;
-        src=&quot;/blog/static/9d1f8af96696c1f93a7c97123815fd0a/f4b77/elk.png&quot;
-        srcset=&quot;/blog/static/9d1f8af96696c1f93a7c97123815fd0a/6bdcf/elk.png 315w,
-/blog/static/9d1f8af96696c1f93a7c97123815fd0a/f058b/elk.png 630w,
-/blog/static/9d1f8af96696c1f93a7c97123815fd0a/f4b77/elk.png 770w&quot;
-        sizes=&quot;(max-width: 770px) 100vw, 770px&quot;
+        src=&quot;/blog/static/bd924bc09d97ac4372a3db189c8f8486/0a47e/elk.png&quot;
+        srcset=&quot;/blog/static/bd924bc09d97ac4372a3db189c8f8486/6bdcf/elk.png 315w,
+/blog/static/bd924bc09d97ac4372a3db189c8f8486/0a47e/elk.png 600w&quot;
+        sizes=&quot;(max-width: 600px) 100vw, 600px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
@@ -553,7 +610,7 @@ Minecraft has many containers available and they are well-maintained:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; “ELK” is the acronym for three open source projects: Elasticsearch, Logstash, and Kibana.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;There are many ways to send a log to ElasticSearch. You could use &lt;code class=&quot;language-text&quot;&gt;filebeat&lt;/code&gt; to tail the &lt;code class=&quot;language-text&quot;&gt;latest.log&lt;/code&gt;, or use a &lt;code class=&quot;language-text&quot;&gt;logstash&lt;/code&gt; module that works with Minecraft server log4j.&lt;/p&gt;
-&lt;p&gt;However, we want something generic that works with our containerized Minecraft server or any containers. So we use a logstash agent to send docker container logs to &lt;code class=&quot;language-text&quot;&gt;Redis&lt;/code&gt; for temporary storage. And a central logstash agent will pull from &lt;code class=&quot;language-text&quot;&gt;Redis&lt;/code&gt; and push them to &lt;code class=&quot;language-text&quot;&gt;ElasticSearch&lt;/code&gt;. Finally, we have &lt;code class=&quot;language-text&quot;&gt;Kibana&lt;/code&gt; that reads from &lt;code class=&quot;language-text&quot;&gt;ElasticSearch&lt;/code&gt; and visualizes the logs&lt;/p&gt;
+&lt;p&gt;However, we want something generic that works with our containerized Minecraft server or any containers. So we use a logstash agent to send docker container logs to &lt;code class=&quot;language-text&quot;&gt;Redis&lt;/code&gt; for temporary storage. And a central logstash agent will pull from &lt;code class=&quot;language-text&quot;&gt;Redis&lt;/code&gt; and push them to &lt;code class=&quot;language-text&quot;&gt;ElasticSearch&lt;/code&gt;. Finally, we have &lt;code class=&quot;language-text&quot;&gt;Kibana&lt;/code&gt; that reads from &lt;code class=&quot;language-text&quot;&gt;ElasticSearch&lt;/code&gt; and visualizes the logs.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1260px; &quot;
@@ -588,10 +645,40 @@ Minecraft has many containers available and they are well-maintained:&lt;/p&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; You can visualize, filter, and search Minecraft server logs&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; You can visualize, filter, and search Minecraft server logs.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3&gt;How do I setup all of these technologies?&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Ansible&lt;/strong&gt; does just that. It is an open-source software provisioning, configuration management, and application-deployment tool enabling infrastructure as code&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 886px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/72d8abca0e24a3e3d39eefa55f5aeaf9/cc155/ansible_logo.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 43.492063492063494%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAABLklEQVQoz52Sv0oDQRCHv72925MLZwgm4B8EiwQkVQ4VDs5GG1srixTCeY0vcKWtqazyApLnSOFDWAtWqbVLjHsyusGAhSQDwwzD8O1vZhZ+bdsYc6617gVBsKh5rGl3Sqk3oALmwBNwsC60VEoJqCqKwnY6HSu5UuoZ2FhH3asA4jj+GI1GNs9zAU49z5NHrpdUiivAd1FcL3F+JtFavwuw3+/b4XBoy7K09Xp95lTeu+YL4Bg4BY6AHnAIXLm4C5wtyJMoiqrBYDDPssyOx2NRORVgGIa3rmcP2HTeBLaAGrDvcqntONU8NBqNKk3TT2DWbrdnWZbJuJNWq9VceYHdbld28iiKfN+v3KVfjDFpGIb/XVn9qcRx/B2jKDoBboIguEySpCYwY8zK//ALRmpDNJJrFFUAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;ansible logo&quot;
+        title=&quot;ansible logo&quot;
+        src=&quot;/blog/static/72d8abca0e24a3e3d39eefa55f5aeaf9/cc155/ansible_logo.png&quot;
+        srcset=&quot;/blog/static/72d8abca0e24a3e3d39eefa55f5aeaf9/6bdcf/ansible_logo.png 315w,
+/blog/static/72d8abca0e24a3e3d39eefa55f5aeaf9/f058b/ansible_logo.png 630w,
+/blog/static/72d8abca0e24a3e3d39eefa55f5aeaf9/cc155/ansible_logo.png 886w&quot;
+        sizes=&quot;(max-width: 886px) 100vw, 886px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ansible&lt;/strong&gt; does just that. It is an open-source software provisioning, configuration management, and application-deployment tool enabling infrastructure as code.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1260px; &quot;
@@ -624,7 +711,7 @@ Minecraft has many containers available and they are well-maintained:&lt;/p&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;Ansible&lt;/strong&gt; automates setting up everything&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;Ansible&lt;/strong&gt; automates setting up everything.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3&gt;How do I fix crashes in production?&lt;/h3&gt;
 &lt;p&gt;Sometimes everything runs well in the local development environment, but the server crashes constantly for the production environment. Luckily we had set up many metrics that can help us. The first step is to use &lt;strong&gt;Kibana&lt;/strong&gt; to find any errors.&lt;/p&gt;
@@ -662,7 +749,7 @@ Minecraft has many containers available and they are well-maintained:&lt;/p&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; Searching for errors for the past 12 hours in the log&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; Searching for errors for the past 12 hours in the log.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
@@ -695,7 +782,7 @@ Minecraft has many containers available and they are well-maintained:&lt;/p&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; Java is hung when opening files and crashed the server&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; Java is hung when opening files and crashed the server.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
@@ -728,9 +815,9 @@ Minecraft has many containers available and they are well-maintained:&lt;/p&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; Error spiked at 20:30, 17:05, 16:25, and 15:48&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; Error spiked at 20:30, 17:05, 16:25, and 15:48.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;After looking at various metrics for CPU, memory, network, and storage, we found the issue in the storage&lt;/p&gt;
+&lt;p&gt;After looking at various metrics for CPU, memory, network, and storage, we found the issue in the storage.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1260px; &quot;
@@ -763,14 +850,21 @@ Minecraft has many containers available and they are well-maintained:&lt;/p&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; Read bandwidth also spiked at 20:30, 17:05, 16:25, and 15:48&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; Read bandwidth also spiked at 20:30, 17:05, 16:25, and 15:48.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Turns out when the operating system is running out of memory, so it writes to a swapfile. A swap is a space on a disk that is used when the amount of physical RAM is full, but the speed of the disk just can’t keep up. When swapfile hijacked the storage I/O, Java I/O threads will just hang and time out. Therefore, the solution was to increase the ram of the operating system or decrease the ram allocation of other containers.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Fun Fact: RAM is 4 to 7 times faster than a Solid State Drive&lt;/p&gt;
+&lt;p&gt;Fun Fact: RAM is 4 to 7 times faster than a Solid State Drive.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2&gt;The End&lt;/h2&gt;
-&lt;p&gt;You made it to the end! This over-engineered server does the same thing as you were to launch the jar directly and it is still a vanilla server haha. If you are interested in a tutorial, free feel to leave a comment. Also suggestions and feedback are appreciated!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Enable Cassandra Authentication]]></title><description><![CDATA[Enable Cassandra Database Authentication Edit  Set  to  Restart the service Use default super user to log into  Create a new super user…]]></description><link>https://weihao.github.io/blog/how-to-enable-cassandra-authentication/</link><guid isPermaLink="false">https://weihao.github.io/blog/how-to-enable-cassandra-authentication/</guid><pubDate>Wed, 22 Jan 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Enable Cassandra Database Authentication&lt;/h2&gt;
+&lt;p&gt;You made it to the end! This over-engineered server does the same thing as you were to launch the jar directly and it is still a vanilla server haha. If you are interested in a tutorial, free feel to leave a comment. Also suggestions and feedback are appreciated!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Enable Redis Authentication]]></title><description><![CDATA[Enable Redis Authentication Enable redis authentication password. Test authentication password. If it returns , then it is working.]]></description><link>https://weihao.github.io/blog/how-to-enable-redis-authentication/</link><guid isPermaLink="false">https://weihao.github.io/blog/how-to-enable-redis-authentication/</guid><pubDate>Wed, 22 Jan 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Enable Redis Authentication&lt;/h2&gt;
+&lt;p&gt;Enable redis authentication password.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;redis-cli
+CONFIG SET requirepass your_secret_password&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Test authentication password.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;redis-cli
+AUTH your_secret_password&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;If it returns &lt;code class=&quot;language-text&quot;&gt;OK&lt;/code&gt;, then it is working.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Enable Cassandra Authentication]]></title><description><![CDATA[Enable Cassandra Database Authentication Edit  Set  to  Restart the service Use default super user to log into  Create a new super user…]]></description><link>https://weihao.github.io/blog/how-to-enable-cassandra-authentication/</link><guid isPermaLink="false">https://weihao.github.io/blog/how-to-enable-cassandra-authentication/</guid><pubDate>Wed, 22 Jan 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Enable Cassandra Database Authentication&lt;/h2&gt;
 &lt;p&gt;Edit &lt;code class=&quot;language-text&quot;&gt;cassandra.yaml&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;nano /etc/cassandra/cassandra.yaml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Set &lt;code class=&quot;language-text&quot;&gt;authenticator&lt;/code&gt; to &lt;code class=&quot;language-text&quot;&gt;PasswordAuthenticator&lt;/code&gt;&lt;/p&gt;
@@ -784,11 +878,4 @@ Minecraft has many containers available and they are well-maintained:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;ALTER ROLE cassandra WITH SUPERUSER = false AND LOGIN = false;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Use Docker Without Sudo]]></title><description><![CDATA[Use Docker Without Sudo This command adds you into docker group, so you could run docker command without sudo. The user you added has to log…]]></description><link>https://weihao.github.io/blog/how-to-use-docker-without-sudo/</link><guid isPermaLink="false">https://weihao.github.io/blog/how-to-use-docker-without-sudo/</guid><pubDate>Wed, 22 Jan 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Use Docker Without Sudo&lt;/h2&gt;
 &lt;p&gt;This command adds you into docker group, so you could run docker command without sudo.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;sudo usermod -aG docker $USER&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;The user you added has to &lt;strong&gt;log out and log back in&lt;/strong&gt; for it to work.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Enable Redis Authentication]]></title><description><![CDATA[Enable Redis Authentication Enable redis authentication password. Test authentication password. If it returns , then it is working.]]></description><link>https://weihao.github.io/blog/how-to-enable-redis-authentication/</link><guid isPermaLink="false">https://weihao.github.io/blog/how-to-enable-redis-authentication/</guid><pubDate>Wed, 22 Jan 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Enable Redis Authentication&lt;/h2&gt;
-&lt;p&gt;Enable redis authentication password.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;redis-cli
-CONFIG SET requirepass your_secret_password&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Test authentication password.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;redis-cli
-AUTH your_secret_password&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;If it returns &lt;code class=&quot;language-text&quot;&gt;OK&lt;/code&gt;, then it is working.&lt;/p&gt;</content:encoded></item></channel></rss>
+&lt;p&gt;The user you added has to &lt;strong&gt;log out and log back in&lt;/strong&gt; for it to work.&lt;/p&gt;</content:encoded></item></channel></rss>

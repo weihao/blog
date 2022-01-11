@@ -1,0 +1,776 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.dbdedc9fbdb29c69dc76.css" data-identity="gatsby-global-css">@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:100;src:local("Montserrat Thin "),local("Montserrat-Thin"),url(/static/montserrat-latin-100-8d7d79679b70dbe27172b6460e7a7910.woff2) format("woff2"),url(/static/montserrat-latin-100-ec38980a9e0119a379e2a9b3dbb1901a.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:100;src:local("Montserrat Thin italic"),local("Montserrat-Thinitalic"),url(/static/montserrat-latin-100italic-e279051046ba1286706adc886cf1c96b.woff2) format("woff2"),url(/static/montserrat-latin-100italic-3b325a3173c8207435cd1b76e19bf501.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:200;src:local("Montserrat Extra Light "),local("Montserrat-Extra Light"),url(/static/montserrat-latin-200-9d266fbbfa6cab7009bd56003b1eeb67.woff2) format("woff2"),url(/static/montserrat-latin-200-2d8ba08717110d27122e54c34b8a5798.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:200;src:local("Montserrat Extra Light italic"),local("Montserrat-Extra Lightitalic"),url(/static/montserrat-latin-200italic-6e5b3756583bb2263eb062eae992735e.woff2) format("woff2"),url(/static/montserrat-latin-200italic-a0d6f343e4b536c582926255367a57da.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:300;src:local("Montserrat Light "),local("Montserrat-Light"),url(/static/montserrat-latin-300-00b3e893aab5a8fd632d6342eb72551a.woff2) format("woff2"),url(/static/montserrat-latin-300-ea303695ceab35f17e7d062f30e0173b.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:300;src:local("Montserrat Light italic"),local("Montserrat-Lightitalic"),url(/static/montserrat-latin-300italic-56f34ea368f6aedf89583d444bbcb227.woff2) format("woff2"),url(/static/montserrat-latin-300italic-54b0bf2c8c4c12ffafd803be2466a790.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:400;src:local("Montserrat Regular "),local("Montserrat-Regular"),url(/static/montserrat-latin-400-b71748ae4f80ec8c014def4c5fa8688b.woff2) format("woff2"),url(/static/montserrat-latin-400-0659a9f4e90db5cf51b50d005bff1e41.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:400;src:local("Montserrat Regular italic"),local("Montserrat-Regularitalic"),url(/static/montserrat-latin-400italic-6eed6b4cbb809c6efc7aa7ddad6dbe3e.woff2) format("woff2"),url(/static/montserrat-latin-400italic-7583622cfde30ae49086d18447ab28e7.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:500;src:local("Montserrat Medium "),local("Montserrat-Medium"),url(/static/montserrat-latin-500-091b209546e16313fd4f4fc36090c757.woff2) format("woff2"),url(/static/montserrat-latin-500-edd311588712a96bbf435fad264fff62.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:500;src:local("Montserrat Medium italic"),local("Montserrat-Mediumitalic"),url(/static/montserrat-latin-500italic-c90ced68b46050061d1a41842d6dfb43.woff2) format("woff2"),url(/static/montserrat-latin-500italic-5146cbfe02b1deea5dffea27a5f2f998.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:600;src:local("Montserrat SemiBold "),local("Montserrat-SemiBold"),url(/static/montserrat-latin-600-0480d2f8a71f38db8633b84d8722e0c2.woff2) format("woff2"),url(/static/montserrat-latin-600-b77863a375260a05dd13f86a1cee598f.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:600;src:local("Montserrat SemiBold italic"),local("Montserrat-SemiBolditalic"),url(/static/montserrat-latin-600italic-cf46ffb11f3a60d7df0567f8851a1d00.woff2) format("woff2"),url(/static/montserrat-latin-600italic-c4fcfeeb057724724097167e57bd7801.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:700;src:local("Montserrat Bold "),local("Montserrat-Bold"),url(/static/montserrat-latin-700-7dbcc8a5ea2289d83f657c25b4be6193.woff2) format("woff2"),url(/static/montserrat-latin-700-99271a835e1cae8c76ef8bba99a8cc4e.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:700;src:local("Montserrat Bold italic"),local("Montserrat-Bolditalic"),url(/static/montserrat-latin-700italic-c41ad6bdb4bd504a843d546d0a47958d.woff2) format("woff2"),url(/static/montserrat-latin-700italic-6779372f04095051c62ed36bc1dcc142.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:800;src:local("Montserrat ExtraBold "),local("Montserrat-ExtraBold"),url(/static/montserrat-latin-800-db9a3e0ba7eaea32e5f55328ace6cf23.woff2) format("woff2"),url(/static/montserrat-latin-800-4e3c615967a2360f5db87d2f0fd2456f.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:800;src:local("Montserrat ExtraBold italic"),local("Montserrat-ExtraBolditalic"),url(/static/montserrat-latin-800italic-bf45bfa14805969eda318973947bc42b.woff2) format("woff2"),url(/static/montserrat-latin-800italic-fe82abb0bcede51bf724254878e0c374.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:900;src:local("Montserrat Black "),local("Montserrat-Black"),url(/static/montserrat-latin-900-e66c7edc609e24bacbb705175669d814.woff2) format("woff2"),url(/static/montserrat-latin-900-8211f418baeb8ec880b80ba3c682f957.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:900;src:local("Montserrat Black italic"),local("Montserrat-Blackitalic"),url(/static/montserrat-latin-900italic-4454c775e48152c1a72510ceed3603e2.woff2) format("woff2"),url(/static/montserrat-latin-900italic-efcaa0f6a82ee0640b83a0916e6e8d68.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:normal;font-weight:300;src:local("Merriweather Light "),local("Merriweather-Light"),url(/static/merriweather-latin-300-fc117160c69a8ea0851b26dd14748ee4.woff2) format("woff2"),url(/static/merriweather-latin-300-58b18067ebbd21fda77b67e73c241d3b.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:italic;font-weight:300;src:local("Merriweather Light italic"),local("Merriweather-Lightitalic"),url(/static/merriweather-latin-300italic-fe29961474f8dbf77c0aa7b9a629e4bc.woff2) format("woff2"),url(/static/merriweather-latin-300italic-23c3f1f88683618a4fb8d265d33d383a.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:normal;font-weight:400;src:local("Merriweather Regular "),local("Merriweather-Regular"),url(/static/merriweather-latin-400-d9479e8023bef9cbd9bf8d6eabd6bf36.woff2) format("woff2"),url(/static/merriweather-latin-400-040426f99ff6e00b86506452e0d1f10b.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:italic;font-weight:400;src:local("Merriweather Regular italic"),local("Merriweather-Regularitalic"),url(/static/merriweather-latin-400italic-2de7bfeaf08fb03d4315d49947f062f7.woff2) format("woff2"),url(/static/merriweather-latin-400italic-79db67aca65f5285964ab332bd65f451.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:normal;font-weight:700;src:local("Merriweather Bold "),local("Merriweather-Bold"),url(/static/merriweather-latin-700-4b08e01d805fa35d7bf777f1b24314ae.woff2) format("woff2"),url(/static/merriweather-latin-700-22fb8afba4ab1f093b6ef9e28a9b6e92.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:italic;font-weight:700;src:local("Merriweather Bold italic"),local("Merriweather-Bolditalic"),url(/static/merriweather-latin-700italic-cd92541b177652fffb6e3b952f1c33f1.woff2) format("woff2"),url(/static/merriweather-latin-700italic-f87f3d87cea0dd0979bfc8ac9ea90243.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:normal;font-weight:900;src:local("Merriweather Black "),local("Merriweather-Black"),url(/static/merriweather-latin-900-f813fc6a4bee46eda5224ac7ebf1b7be.woff2) format("woff2"),url(/static/merriweather-latin-900-5d4e42cb44410674acd99153d57df032.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:italic;font-weight:900;src:local("Merriweather Black italic"),local("Merriweather-Blackitalic"),url(/static/merriweather-latin-900italic-b7901d85486871c1779c0e93ddd85656.woff2) format("woff2"),url(/static/merriweather-latin-900italic-9647f9fdab98756989a8a5550eb205c3.woff) format("woff")}
+
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{-webkit-text-size-adjust:100%;line-height:1.15}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}[hidden]{display:none}:root{--maxWidth-none:"none";--maxWidth-xs:20rem;--maxWidth-sm:24rem;--maxWidth-md:28rem;--maxWidth-lg:32rem;--maxWidth-xl:36rem;--maxWidth-2xl:42rem;--maxWidth-3xl:48rem;--maxWidth-4xl:56rem;--maxWidth-full:"100%";--maxWidth-wrapper:var(--maxWidth-4xl);--spacing-px:"1px";--spacing-0:0;--spacing-1:0.25rem;--spacing-2:0.5rem;--spacing-3:0.75rem;--spacing-4:1rem;--spacing-5:1.25rem;--spacing-6:1.5rem;--spacing-8:2rem;--spacing-10:2.5rem;--spacing-12:3rem;--spacing-16:4rem;--spacing-20:5rem;--spacing-24:6rem;--spacing-32:8rem;--fontFamily-sans:Montserrat,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--fontFamily-serif:"Merriweather","Georgia",Cambria,"Times New Roman",Times,serif;--font-body:var(--fontFamily-serif);--font-heading:var(--fontFamily-sans);--fontWeight-normal:400;--fontWeight-medium:500;--fontWeight-semibold:600;--fontWeight-bold:700;--fontWeight-extrabold:800;--fontWeight-black:900;--fontSize-root:16px;--lineHeight-none:1;--lineHeight-tight:1.1;--lineHeight-normal:1.5;--lineHeight-relaxed:1.625;--fontSize-0:0.833rem;--fontSize-1:1rem;--fontSize-2:1.2rem;--fontSize-3:1.44rem;--fontSize-4:1.728rem;--fontSize-5:2.074rem;--fontSize-6:2.488rem;--fontSize-7:2.986rem;--color-primary:#457b9d;--color-text:#2e353f;--color-text-light:#4f5969;--color-heading:#1a202c;--color-heading-black:#000;--color-accent:#d1dce5}*,:after,:before{box-sizing:border-box}html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-size:var(--fontSize-root);line-height:var(--lineHeight-normal)}body{color:var(--color-text);font-family:var(--font-body);font-size:var(--fontSize-1)}footer{padding:var(--spacing-6) var(--spacing-0)}hr{background:var(--color-accent);border:0;height:1px}h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);letter-spacing:-.025em;line-height:var(--lineHeight-tight);margin-bottom:var(--spacing-6);margin-top:var(--spacing-12)}h2,h3,h4,h5,h6{color:var(--color-heading);font-weight:var(--fontWeight-bold)}h1{color:var(--color-heading-black);font-size:var(--fontSize-6);font-weight:var(--fontWeight-black)}h2{font-size:var(--fontSize-5)}h3{font-size:var(--fontSize-4)}h4{font-size:var(--fontSize-3)}h5{font-size:var(--fontSize-2)}h6{font-size:var(--fontSize-1)}h1>a,h2>a,h3>a,h4>a,h5>a,h6>a{color:inherit;text-decoration:none}p{--baseline-multiplier:0.179;--x-height-multiplier:0.35;line-height:var(--lineHeight-relaxed);margin:var(--spacing-0) var(--spacing-0) var(--spacing-8) var(--spacing-0)}ol,p,ul{padding:var(--spacing-0)}ol,ul{list-style-image:none;list-style-position:outside;margin-bottom:var(--spacing-8);margin-left:var(--spacing-0);margin-right:var(--spacing-0)}ol li,ul li{padding-left:var(--spacing-0)}li>p,ol li,ul li{margin-bottom:calc(var(--spacing-8)/2)}li :last-child{margin-bottom:var(--spacing-0)}li>ul{margin-left:var(--spacing-8);margin-top:calc(var(--spacing-8)/2)}blockquote{border-left:var(--spacing-1) solid var(--color-primary);color:var(--color-text-light);font-size:var(--fontSize-2);font-style:italic;margin-bottom:var(--spacing-8);margin-left:calc(var(--spacing-6)*-1);margin-right:var(--spacing-8);padding:var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-6)}blockquote>:last-child{margin-bottom:var(--spacing-0)}blockquote>ol,blockquote>ul{list-style-position:inside}table{border-collapse:collapse;border-spacing:.25rem;margin-bottom:var(--spacing-8);width:100%}table thead tr th{border-bottom:1px solid var(--color-accent)}a{color:var(--color-primary)}a:focus,a:hover{text-decoration:none}.global-wrapper{margin:var(--spacing-0) auto;max-width:72rem;padding:var(--spacing-10) var(--spacing-5)}.global-wrapper[data-is-root-path=true] .bio{margin-bottom:var(--spacing-10)}.global-header{margin-bottom:var(--spacing-12)}.main-heading{font-size:var(--fontSize-7);margin:0}.post-list-item{margin-bottom:var(--spacing-8);margin-top:var(--spacing-8)}.post-list-item p{margin-bottom:var(--spacing-0)}.post-list-item h2{color:var(--color-primary);font-size:var(--fontSize-4);margin-bottom:var(--spacing-2);margin-top:var(--spacing-0)}.post-list-item header{margin-bottom:var(--spacing-4)}.header-link-home{font-family:var(--font-heading);font-size:var(--fontSize-2);font-weight:var(--fontWeight-bold);text-decoration:none}.bio{display:flex;margin-bottom:var(--spacing-16)}.bio-avatar,.bio p{margin-bottom:var(--spacing-0)}.bio-avatar{border-radius:100%;margin-right:var(--spacing-4);min-width:50px}.blog-post header h1{margin:var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0)}.blog-post header p{font-family:var(--font-heading);font-size:var(--fontSize-2)}.blog-post-nav ul{margin:var(--spacing-0)}.gatsby-highlight{margin-bottom:var(--spacing-8)}@media (max-width:42rem){blockquote{margin-left:var(--spacing-0);padding:var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-4)}ol,ul{list-style-position:inside}}code[class*=language-],pre[class*=language-]{word-wrap:normal;background:none;color:#000;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;text-align:left;text-shadow:0 1px #fff;white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-]::selection,code[class*=language-] ::selection,pre[class*=language-]::selection,pre[class*=language-] ::selection{background:#b3d4fc;text-shadow:none}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{background:hsla(0,0%,100%,.5);color:#9a6e3a}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}</style><meta name="generator" content="Gatsby 4.4.0"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){if(void 0===e.target.dataset.mainImage)return;if(void 0===e.target.dataset.gatsbyImageSsr)return;const t=e.target;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="alternate" type="application/rss+xml" title="Gatsby Starter Blog RSS Feed" href="/rss.xml"/><link rel="icon" href="/favicon-32x32.png?v=4a9773549091c227cd2eb82ccd9c5e3a" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><title data-react-helmet="true">Building a Minecraft Server With State of the Art Technologies | Blog</title><meta data-react-helmet="true" name="description" content="Over-engineering a Minecraft server sounds fun!"/><meta data-react-helmet="true" property="og:title" content="Building a Minecraft Server With State of the Art Technologies"/><meta data-react-helmet="true" property="og:description" content="Over-engineering a Minecraft server sounds fun!"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content=""/><meta data-react-helmet="true" name="twitter:title" content="Building a Minecraft Server With State of the Art Technologies"/><meta data-react-helmet="true" name="twitter:description" content="Over-engineering a Minecraft server sounds fun!"/><link as="script" rel="preload" href="/webpack-runtime-e50f7582626d33aa810f.js"/><link as="script" rel="preload" href="/framework-e413e527015be9a1bdfd.js"/><link as="script" rel="preload" href="/app-800b5221e72322b43213.js"/><link as="script" rel="preload" href="/commons-85d93be29fb9a24ec01b.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-3b9271c723e976d3b426.js"/><link as="fetch" rel="preload" href="/page-data/minecraft-server/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/2841359383.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/3274528899.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="global-wrapper" data-is-root-path="false"><header class="global-header"><a class="header-link-home" href="/">Blog</a></header><main><article class="blog-post" itemscope="" itemType="http://schema.org/Article"><header><h1 itemProp="headline">Building a Minecraft Server With State of the Art Technologies</h1><p>January 01, 2022</p></header><section itemProp="articleBody"><h2>Intro</h2>
+<p>Minecraft is a great medium to toy around with cutting-edge technologies, and recently many tutorials talking about them. However, in this post, we deploy them in production which presents more challenges and problem-solving.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1260px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/377c5b7138840073ece8013291f56054/0c156/architecture.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 117.77777777777779%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAYCAYAAAD6S912AAAACXBIWXMAAAsTAAALEwEAmpwYAAAB7ElEQVQ4y42Vh47DMAxD/f//WKDoSvfeIyqeAOZ0rtPUgOA0sWmSktV0uVxsv983cTwefd7tdsY3gnf5qOvaSiOdz2fbbDa23W49ALter3a73ex+v9t8PrfJZGKHw8FOp5OHwEqgyb6M1+tlq9XKAZfLZcM4AuagSS/bAsDxeNxYAEMOimt+YqiF+IdsgLBBVkSwCJrawLQIAHx9PB7OkN9iGMG0p5Ph8/l0oAi4WCw8SSUfOwGRx2YAAQN0MBh4kkqyOyUDhI8AwzaXiPyYpE6GMFqv184OQII6zRPzc1IAo2yYp9OpzWYzGw6H/lsHUAG8d4a/1OFoNPLbBDNuFoGvKiOeWfdVsgYFTQIAEWveEaV77QyhDANOQgL+ECQkbpL5sCHEVJ46IIvQj09IYwFNQs9qHIBzGAMAvkk+3vb7/T+GZJITuRF4oppjRpoAVSI6iGclRmoaDzm1dOGVRYFJEb7G+vvoNnnZqIhhR/tipsBhXFWVM5SvH3UYQSUh1iF+cn8BJnq93j9AJZF9KV6lCKQGCyPaFzPS8VsVwHdmksIaFCS1KF6QGHUXJYJEqTRyia1XDxBA2aQ2hVRKggQQfFNWOYxD8kbR3BSosgmQ2DwlG5YA6d8QP5lbAeWF5OTtiwToJpQqIkp+A7jlWSiud3a6AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="architecture"
+        title="architecture"
+        src="/static/377c5b7138840073ece8013291f56054/78612/architecture.png"
+        srcset="/static/377c5b7138840073ece8013291f56054/6bdcf/architecture.png 315w,
+/static/377c5b7138840073ece8013291f56054/f058b/architecture.png 630w,
+/static/377c5b7138840073ece8013291f56054/78612/architecture.png 1260w,
+/static/377c5b7138840073ece8013291f56054/0c156/architecture.png 1473w"
+        sizes="(max-width: 1260px) 100vw, 1260px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong> Building a Minecraft Server isn’t all about using <strong>Paper</strong> or <strong>Velocity</strong></p>
+</blockquote>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1260px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/19ebcbf8083b01835aa74c9f6a6f6d0d/c0786/infra.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 108.57142857142857%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAIAAABPIytRAAAACXBIWXMAAAsTAAALEwEAmpwYAAABoklEQVQ4y51T2W7jMBDz//9mkASxLejWaCSNXFRM3HRzLcoHAwbmoEjOtL1AzpmI8kAcIKI0wMyomfbq3nu7QURijPM8n06neZ6JiJmdc9Za731r7drsvV/XVSllrcWGEAIRYbnWupTSexeROoDpzCwiUynlcrmcz+dSSq0VxDC7tZZSEpFSCjPvX2PM4XAgom/aNNBaK6XQDTln773WWn4DLETk+uacc0qp1loGmBnaLMsSQui93wvZB34ESynFGEUEUv1T/bTt2szMZgBsY4zeeyLqveO33/A4boIAWmv4AWOZGWrFGLfXmHrvIQQUvSL8rnlZFmPM00d+aN62zTkHVUUkpVRK+d/N27YhVVDFGOO9h2HzPDvn9jA+b4ZICAlyhhjywBvyV9rOOWyG1R8d/mmGVdjmnAPtWqsagG07r9bar4SBHhJ2r7PW+ng87lanlKy1OB4c5vSGVUpJKYUjw82EEGqtIYRlWZj522et9bqutVYRcc7tkSQia+0eeCy4XzOBnlIKIltrQwiwSmttrX0MzPOretT5c0hw+n+I5xcjPA1kTsCgmAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="infra"
+        title="infra"
+        src="/static/19ebcbf8083b01835aa74c9f6a6f6d0d/78612/infra.png"
+        srcset="/static/19ebcbf8083b01835aa74c9f6a6f6d0d/6bdcf/infra.png 315w,
+/static/19ebcbf8083b01835aa74c9f6a6f6d0d/f058b/infra.png 630w,
+/static/19ebcbf8083b01835aa74c9f6a6f6d0d/78612/infra.png 1260w,
+/static/19ebcbf8083b01835aa74c9f6a6f6d0d/c0786/infra.png 1873w"
+        sizes="(max-width: 1260px) 100vw, 1260px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong> We will deep dive into this infrastructure and what problem it solves</p>
+</blockquote>
+<h2>Problems</h2>
+<p>I will share a problem first and then a way I solved it. Many interesting problems are common and already solved by the tech community.</p>
+<h3>How can a team work together on the server?</h3>
+<p>Use <code class="language-text">Git</code> for tracking changes in any files, but before we use the version control system <code class="language-text">Git</code>, we need to figure out what files need to be tracked, and put any unrelated files like logs, and user data into <code class="language-text">.gitignore</code>.</p>
+<div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh"># plugins
+**/plugins/Pl3xMap/web/tiles
+**/plugins/Pl3xMap/web/images
+**/plugins/Pl3xMap/web/js
+**/plugins/Pl3xMap/web/css
+**/plugins/Pl3xMap/data
+**/plugins/GriefPreventionData/Logs
+**/plugins/GriefPreventionData/PlayerData
+**/plugins/LuckPerms/translations
+**/plugins/LuckPerms/libs
+**/plugins/WorldGuard/cache
+**/plugins/WorldGuard/worlds
+**/plugins/WorldEdit/.archive-unpack
+**/plugins/WorldEdit/sessions
+**/plugins/GriefPreventionData/softMute.txt
+**/plugins/CreativeManager/data
+**/plugins/CreativeManager/data.db
+
+# smp
+**/smp/data
+**/smp/backups
+**/smp/bluemap/web/data
+**/smp/bluemap/web/assets/playerheads
+**/smp/plugins/BlueMapFloodgate/playerheads
+
+# lobby
+**/lobby/data
+**/lobby/worlds/world/advancements
+**/lobby/worlds/world/playerdata
+**/lobby/worlds/world/stats
+**/lobby/worlds/world/uid.dat
+**/lobby/worlds/world/session.lock
+**/lobby/worlds/world/data/raids.dat
+
+# velocity
+**/velocity/data
+**/velocity/plugins/luckperms/luckperms-h2.mv.db
+**/velocity/plugins/luckperms/libs
+**/velocity/plugins/luckperms/translations</code></pre></div>
+<!-- ![gitignore](./gitignore.png)
+
+> **_NOTE:_** A giant list of ignored files including logs, data, and images -->
+<p>Sometimes, the config that we want to track has meaningless changes made by the server. We can solve the issue by using a one-way file synchronization system.</p>
+<ol>
+<li>When the source file is updated in Git, replace the file used by the server</li>
+<li>When the file is updated by the server, keep using it but don’t sync the changes to Git</li>
+<li>Note if the server added some missing properties to a file, it is not tracked. Even if it gets overwritten, the server will just add the missing properties again, therefore there is no harm but you just won’t know</li>
+</ol>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 461px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/7aa7a361d07131c8673f7c16f40ce51a/f816d/properties.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 81.58730158730158%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACXElEQVQ4y4XTa4/UNhSH8Xz/b0URUKbQSqi0S2dnh8k98SWO7Vyc21NNWAS0u8OJfvofv7FknZNIGUdWyl0pGkqhd0lekRcVcVpyjjNUY+nHGT8Euhuik1o4ypWTXjnlikxacuU4ZWJPM2zofqEZ1r03ez4v6ruZzk87rSxaGoyytPrKYY2nkS22cSzzxrpsLDdEPr9g43v69Ix8OJIc3pAe3lC8e7v3yeH1fr78+gpXZizeMlnzrOh+unA3PfBnf+SD/MSr4j0vs994Xf3By/QdvyQHXhQHXmRvSYYSvVnkalBr+6RoXhbCNDGGica0iFoihKISNbkqqKVAeY2bHdfatu2La/+EaF1mrqYQcM6jtKKuaj43Z/IxY2Pl+dq+yy+iwm2cxUDWrmSipVKWUlkSpSiUoRDtfq4bR6Udwniq68C6iX6Gbtp+EJXtzLnuSJtALq4XXHfREMuarFHotqPtAm0faH3AuBFte9wwM8zQT9sPonkOhHFgHAestQhRo5QiExmNbRi6AesstrWoTjEzcauicRjx3tP5DtMYhBAopalLwbE6kpiEZVoYh4E+9MzrzLZubOv6bUDficIlZ7yPIS7xlwyd5uhLhkgvSBWD68D5x+zBdmD9Y/5fpDuNcDWVKal0TVpmFHVJXCYUTUElKjKbUfYlYQmMy0i4IfpnSfg4P/C7v+Ov5sRRXLirzvwt7/lkr6sjiaeCemtQWORPRPM4E/qws61DSUVV1kglyVW+D6odDcu6/HflnhSNIdD1Pb7rMW1LVdXUQuzPTn3KuI6P93z9Q25//wLDdMpf8a0TqgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="properties"
+        title="properties"
+        src="/static/7aa7a361d07131c8673f7c16f40ce51a/f816d/properties.png"
+        srcset="/static/7aa7a361d07131c8673f7c16f40ce51a/6bdcf/properties.png 315w,
+/static/7aa7a361d07131c8673f7c16f40ce51a/f816d/properties.png 461w"
+        sizes="(max-width: 461px) 100vw, 461px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong> We don’t want to track useless updates like updated timestamps, or the configs get a random order.</p>
+</blockquote>
+<h3>Why do I need containers?</h3>
+<p>Containers allow apps to be easily and rapidly deployed, patched, or scaled.
+Containers accelerate development, test, and production cycles.
+Minecraft has many containers available and they are well-maintained:</p>
+<ol>
+<li><a href="https://hub.docker.com/r/itzg/minecraft-server">itzg/minecraft-server</a></li>
+<li><a href="https://hub.docker.com/r/itzg/bungeecord">itzg/bungeecord</a></li>
+<li><a href="https://hub.docker.com/r/itzg/minecraft-bedrock-server">itzg/minecraft-bedrock-server</a></li>
+</ol>
+<h3>Should I use flat files or databases?</h3>
+<blockquote>
+<p>Minecraft Java Edition uses file storage like MCRegion or Anvil format. In comparison, Bedrock Edition uses a modified version of Google’s Level Database.</p>
+</blockquote>
+<p>We should use a database if the plugin supports it and most competent plugin developers will support MySQL. My three reasons for picking databases over flat files:</p>
+<ol>
+<li>Databases have standard interface SQL or NoSQL, but there are no automation in flat files</li>
+<li>Databases are more flexible, reliable, and performant</li>
+<li>Databases improved storage efficiency and security</li>
+</ol>
+<h3>How can I see what is happening and what players are doing?</h3>
+<p>When you run a Minecraft server, you don’t have much insight into what is happening unless you are logged in the game.</p>
+<p>The following web apps are used to increase the visibility of your Minecraft server, and they run in your browser.</p>
+<h3>Map</h3>
+<p>BlueMap supports 2D/3D/player perspective, real-time player positions, and more.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1260px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/ac5cd7205b7d45aed51a48d886a1b2de/c2d13/maps.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 50.476190476190474%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsTAAALEwEAmpwYAAACN0lEQVQozwXBa2/SUAAA0P4NYxYzp5mbMNrCeMkgMB4DhLW0hT6hUOjr9nILtAUKc1uczhnjFuOHuZiY6B/1HMy91a6+e4J9WlMOKnyx3CudKY2WInNmWtAzBtd4mPu/ru7/3D0+/Xx6/HN3//fm6+/rH/++bB8W2Im5Xxzvl/nDmhRpDSMdK9ocRUSdYkesbBckazweiN9Gq89wUWcHBU7OD6LkYCep7qb7r7C0uhfvvijLh+cjnLHjDEjQOnEOcG5allBBhBW+X/cNQUMV1ilXleH7YaMlETUpmpJfYm+bz6KN5znudcciOXhMT2N0EAFbSfWLtIMzDt4BRN8raJtSb5rqWFFBzUNVkXvFLLWLkfROVnxTG+Mdh6RtQvRycNWbL7aDhcg6aQYSDDxe3vb9TwLrxCkj1rMzff20LZJZeg/j9UQTJCoTgnLiswvZhLox73oXw8G8ydsqN83I89w4bIhuAQYqD/OMRTJTgjLxk/4BVrfwqh6rGDiLCA1JwN0OERWEnL8CIgBGQGlmuqOT7ka7vrwJ155ilFparG3EqzqJ5bqtknpctVI0JGjwTrCAM225l0g267rPDRZnlEpo6DwMw3ATbtcrZVIoMgc16ahpk1i8viaqXnnEtx2cdUgLiZwmCYanB1wPnLnLD7PNZLGCy+XG84PARxDmh2ayLuN1DceK3Y+p9rwMMk1ESiApz7LdRQts1Nm1TNuJiXcJ3TWCwERbiPzZ3Ji5pwHKJTu7ReboPyIW0sCFHukYAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="BlueMap"
+        title="BlueMap"
+        src="/static/ac5cd7205b7d45aed51a48d886a1b2de/78612/maps.png"
+        srcset="/static/ac5cd7205b7d45aed51a48d886a1b2de/6bdcf/maps.png 315w,
+/static/ac5cd7205b7d45aed51a48d886a1b2de/f058b/maps.png 630w,
+/static/ac5cd7205b7d45aed51a48d886a1b2de/78612/maps.png 1260w,
+/static/ac5cd7205b7d45aed51a48d886a1b2de/7ca1f/maps.png 1890w,
+/static/ac5cd7205b7d45aed51a48d886a1b2de/9b204/maps.png 2520w,
+/static/ac5cd7205b7d45aed51a48d886a1b2de/c2d13/maps.png 2560w"
+        sizes="(max-width: 1260px) 100vw, 1260px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong> BlueMap generates 3d-maps of the Minecraft worlds and render them real-time in your browser</p>
+</blockquote>
+<p>I fronted <code class="language-text">BlueMap</code> with <code class="language-text">Nginx</code> because BlueMap’s internal web server is not robust enough. I also enabled <code class="language-text">Cloudflare</code> caching for the map to save cost.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1070px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/0f05598e5de3af21da2a8dd05bac479c/121b3/cloudflare.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 82.85714285714286%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAAA7DAAAOwwHHb6hkAAACiUlEQVQ4y41UiW7TQBD1//8NQgVBD0CiHK2oaMnhpE5jJ41Tu4kTN67PnXloZuscAglWepq1196d997MOlVVIY5jpGmKJEmQZRvIYGYwt5EP3rXzvw2nLEu4rgvP8zAcDDAOpmDsNrKbAsSs2H9PRGiaBo0xFo2BI4uy0J66KRhFZfbO5Bf8OUxTI9tsUFcF6ipHmWdwjDFKVyDZ7m+0eib8CAjdGSFYEqYJYZkRkowwWxHyGpCzH1JG9CQAHNGw1+siDOfbLBtidEPGmUt4fQMc/WIcdVjjuy7jXY/xpsN43yPF2459/jBgS1l0ENqtPkSMNGdsSkZRM8qGkVe7KO8kZqX9JnvBc8VwGtMgjiJEUYS6rjXL2jA6M4OyZiw2hMmS9ONRTPr8kJIeKJtUjTXLkE3EkU28Ww+TybStBzSG8WVkKQuNU5fxcUg46dv5cZ9x0ifFZ49w6RPOPcLPKcE5cM2YvbJg1A2rAVlJKGpSymIWMW/dl8wkAdFd5mpKEATwfR95nm+NkcWrgPDqWsQmHPdsFv6C8H1M6MwIvZBxMZZIKpOUnFKez+eI4lgzlCFa3EbyI+MyYI2CizHj64jw7c5Kcu6xzmXtakK4uedDyrK5uC2UhOauqP8DLzIoZc8baespZdHOQOmFa8L9ipXe3SPhemqjFLK4nBa2VMRp0VdoO5LRem07pXVZ9Bs9Mjohoz8/RGdm4/CBFMGCED1ZiIG6YVXVkEylwHe3SwtCVpDGNDf/pO6UZYGB24fvB9seJga8mODOCWeutBvh05Bw6hKGkXVYejlcM5bZrouEumYo2snF0GYndXWfWL0micwZwZIxW7GWzXhhL4tJYrsofiK9SNbPhN9hpxuKOyKgFAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="CloudFlare"
+        title="CloudFlare"
+        src="/static/0f05598e5de3af21da2a8dd05bac479c/121b3/cloudflare.png"
+        srcset="/static/0f05598e5de3af21da2a8dd05bac479c/6bdcf/cloudflare.png 315w,
+/static/0f05598e5de3af21da2a8dd05bac479c/f058b/cloudflare.png 630w,
+/static/0f05598e5de3af21da2a8dd05bac479c/121b3/cloudflare.png 1070w"
+        sizes="(max-width: 1070px) 100vw, 1070px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong> <strong>Cloudflare</strong> is the world’s #1 ranked Content Delivery Network, and you can use it for free</p>
+</blockquote>
+<h3>Player Statistics</h3>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1260px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/b544eb20ba2fe4413c26b765d13212f7/c2d13/stats.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 50.476190476190474%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAC4jAAAuIwF4pT92AAABzklEQVQoz2WR21LbMBCG8wwd2kApgSbkZFuSpTghB1uWfKK5YNpe9P0f5etYDhSmFzs78+/q23+1o9n3MbPpNdPXPB0zm90wm45RyzFycYVafkEtPiPnV+j1NSa6CbGJblCra+4nn5g/3pJED4yyxR3b5YRdiHu2y3t2qwc2j7fYdMGfs+dXU/CzPvG7tRRqTjb/ym7xjW2IO7J5nyeBM9oYjZSCVCTkhcf6FmM2yCQmTVOO+z3d+YXmxwv7wwGdKpQURNEKW1gOx5xovQya0Smj/rFSinW0xroa33TESYyUCiklcRxRuppT4YnjNUJIpFJIIfC+wTpPnCSht2eNjDEBqJTEWkdeVGg9wHq9n+pcRV44jBm0viZFwuFY8HTI3wHNP6AQMfnJYv0zSok3YKoUTXfG+i7oQ69gZwy+fuZoq8Hxe2C/nhAJztWUl4fBhZQkSUxZOnLrSeL4g+7qjrz0/zt8BVZ1S+nrcKTehTaGbKMpreVU1GSZQev0UtO4qgv/nurB9TvgMHVoaMJ1+4Y+906sqzhZj0jiy8qSbGNo2zN5WQf4R2A4iqBta1zVXlYeDpWmGusbitKjtEEFXbHf76mqjtK37J62byv/BczpPHqxnbx1AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="stats"
+        title="stats"
+        src="/static/b544eb20ba2fe4413c26b765d13212f7/78612/stats.png"
+        srcset="/static/b544eb20ba2fe4413c26b765d13212f7/6bdcf/stats.png 315w,
+/static/b544eb20ba2fe4413c26b765d13212f7/f058b/stats.png 630w,
+/static/b544eb20ba2fe4413c26b765d13212f7/78612/stats.png 1260w,
+/static/b544eb20ba2fe4413c26b765d13212f7/7ca1f/stats.png 1890w,
+/static/b544eb20ba2fe4413c26b765d13212f7/9b204/stats.png 2520w,
+/static/b544eb20ba2fe4413c26b765d13212f7/c2d13/stats.png 2560w"
+        sizes="(max-width: 1260px) 100vw, 1260px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong> <strong>MinecraftStats</strong> exports hundreds of in-game statistics so that users can view them in the browser</p>
+</blockquote>
+<p>We can create a sidecar container that mounts the read-only Minecraft server volume and uses Python to export player stats into JSON files. The container will auto-detect files changes and push them to GitHub. GitHub Pages automatically build and deploy the stats web page</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 939px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/e1ade34e5b58ffa29df0c6cd91ce588e/eafa0/github.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 57.460317460317455%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAC4jAAAuIwF4pT92AAABqElEQVQoz4VSWW7bMBDlf2xrs7iIkkhql2LLbYwgl+gZev9bvGJGlpumBfoxoACO3kph6h7tdENeeJx1jUxVkIXHKdU4JgrH/XzMIZZI8hL98h1lGNGOK1y7wP24ovt5h5ivb2jGFb6/8IT+AlU2SFWFjAlqZNrhbPw22kFVLawfeQo38H91s0CXHQQxhOEKVbY80jbQVYfl9oHxcse8vsMPV+RF4Dt2Yjx/70OgVbvwKcowoah7nFKDU2bYFtmu+lf4aWX1REgkBKrdhERWOKUKUWY4migr2BVFJSgH+niJ8i2jKOeMbDthWO9oxhtboqxz41G0NyTK/d6PJZ+yCDgbB1E3M3TZIMntcyGWFq6bsazv6Cj8ZmZAaQNs9w2pdjjEBLgVRirpLidAyqQMA5QNG1uscEgUUlnCuh7WDUjJ4sNeLGscU/NUxmeqWT2VKEhZFait/s+lhw1ipqbpSVEUL9H5eb8PEVGGJE7Q8zB1xz98XqQlWiBmLuzLe/wKSHZZIVnbi/mskBpkVuP/UvQvwG3XQdAToZyeGT4ASRU3xwX8H3Av5RfiHR0AQR7D6wAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="GitHub"
+        title="GitHub"
+        src="/static/e1ade34e5b58ffa29df0c6cd91ce588e/eafa0/github.png"
+        srcset="/static/e1ade34e5b58ffa29df0c6cd91ce588e/6bdcf/github.png 315w,
+/static/e1ade34e5b58ffa29df0c6cd91ce588e/f058b/github.png 630w,
+/static/e1ade34e5b58ffa29df0c6cd91ce588e/eafa0/github.png 939w"
+        sizes="(max-width: 939px) 100vw, 939px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong> Sidecar container has a cron that runs the task in an interval and the bot pushes the data for <strong>GitHub Pages</strong></p>
+</blockquote>
+<h3>How can I monitor the server?</h3>
+<p>Introducing <code class="language-text">Grafana</code>, <code class="language-text">Prometheus</code>, and <code class="language-text">AlertManager</code> to our infrastructure.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 500px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/47496d2cf58945dce019fe66cd080ec1/0b533/grafana_prometheus.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 44.12698412698413%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAAsTAAALEwEAmpwYAAABVklEQVQoz52RPU/CUBSG+5McmfwNOrixOJg4spm4OZr4EQ1YYzSECANKNDVx0UAZSJQ0hJZQSi+pTQuK9IIWK9LK/TAUgqCL8c0ZbnLf9zzn3MvQ3yKE/k3M5IThk5c5R0CcCRNMKf18qNj76/bumicL092ZCa0XDrmpbZeLkG577PBN5KPXWp53EnvvV7Hm0hx+sSZ5hhBMKCVQ8S5XENQGwgmGyvgaD7FetfgcDKB2k3j9VjDQv7vx50QjMvGLInkTl1dRZYO4r6NhRu2R07VCi87FsXMdh6GFgfX4TbZt2zQN3+1Z9Xv3TcdDJJreGWsyuj3D6RRWizM75/P5SOQgmUyy7OHWTphljxLx02g0ynEcpbTeaIiiWDNMAECxUJAUUAPAMMxxGELI87yqqplMulQqZbO8JEm5XE4Qhg/b6XQ0TVOrVcUvuVyWZVnX9Z9f9Q99AfJe6JZqgzI6AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="grafana and prometheus"
+        title="grafana and prometheus"
+        src="/static/47496d2cf58945dce019fe66cd080ec1/0b533/grafana_prometheus.png"
+        srcset="/static/47496d2cf58945dce019fe66cd080ec1/6bdcf/grafana_prometheus.png 315w,
+/static/47496d2cf58945dce019fe66cd080ec1/0b533/grafana_prometheus.png 500w"
+        sizes="(max-width: 500px) 100vw, 500px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong> <strong>Grafana</strong>, <strong>Prometheus</strong>, and <strong>AlertManager</strong> are open-source software, and together they form a monitoring system with a dimensional data model, flexible query language, efficient time-series database, and modern alerting approach.</p>
+</blockquote>
+<p><a href="https://github.com/stefanprodan/dockprom">dockprom</a> spins up all three services in one command. Prometheus scrapes endpoints and stores the data for Grafana visualization.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1260px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/56d39c4c7d8f90e5d6e97ee6c51f181e/c2d13/smp.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 50.79365079365079%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsTAAALEwEAmpwYAAABoElEQVQozz2Qa47bMAyEfYVNbMSSTD1ISqIkr+3E2ey2aFGge4Te/y6Fs0WBD8SQf2aGnbWoNJ579XK6nM5jP+jTefxHP557NQxmGMzL6dL3+qKgH8yorPV47nUXWOKyUGtBSpDiYobAliJQMh5H5aaGo3VAtH7efM7g8OPz9vvP97aXzlPm2mJ7zcsapHCdUWpIBaU6TqNyF3L9CJC4/drUFJji+mMNmyw/l85YxJxDSo7ZRw4xWSQIBB61DZ64tVhblMpS0ryIVM6FU42T852xoV1f223Nr02WVpY5zS3NTZYZs3BK74/ytufHPd93uT/FvufrLXPiTkOYPBmHGrxxYXKkJq/BK/DK+KN/SsDRcnQpHx/haGNyMU2BDmeZvwwrF/kPiTiKjmJqjeToxXIcQ4qUM+ajXafAAxIQa+u1PbS2XoH7WvUUlPGjdhdlNaCxqIw7wh5JQ2dD3L59LO+Psm3zfW9vt3rdyrrW6ybLCp6N80BkI/scsWaahWaJS3GROyS2PinjDaCZngAeJkCBmsNkiQARiA7wqZ/TePwLFH1SnAf/V/wAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="smp"
+        title="smp"
+        src="/static/56d39c4c7d8f90e5d6e97ee6c51f181e/78612/smp.png"
+        srcset="/static/56d39c4c7d8f90e5d6e97ee6c51f181e/6bdcf/smp.png 315w,
+/static/56d39c4c7d8f90e5d6e97ee6c51f181e/f058b/smp.png 630w,
+/static/56d39c4c7d8f90e5d6e97ee6c51f181e/78612/smp.png 1260w,
+/static/56d39c4c7d8f90e5d6e97ee6c51f181e/7ca1f/smp.png 1890w,
+/static/56d39c4c7d8f90e5d6e97ee6c51f181e/9b204/smp.png 2520w,
+/static/56d39c4c7d8f90e5d6e97ee6c51f181e/c2d13/smp.png 2560w"
+        sizes="(max-width: 1260px) 100vw, 1260px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong> Minecraft Prometheus Exporter plugin exports Minecraft stats for Prometheus</p>
+</blockquote>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1260px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/aa969be36c45fa87d2a8e931512a8b23/c2d13/velocity.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 50.79365079365079%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsTAAALEwEAmpwYAAABr0lEQVQoz22PTWsTURSG5z80mdy5956v+zHfmUkyadKoKeqmC3URVBBBNBa7aLAF8f8jE9qd8CyeF855DydBFKV5muqLSTaZ6lTBxST7L5OpnqQ6VXamYZZBqmwCHJTBmabMkjKUWR7lyceoDD3DZ0jpcWBmMCHxbQNVhSwERNpSqvlc8YQae1mjaJLnUjYkGXCCTPsr++rKXg6w7KFtMEasSvQBLVKGQjFQEfN13ew7KiOV0bVFe73gOo7L/RyHJewuYb2C7RpebGAzwGaNiw59k/fXQ7Wdd6+H4WZT7+bNrpvvl8PNNh/miQG2KBmIsmJRgL2yoiyjiIRIEg2Ituc/M8rMiDKsjViMiQYBJEBwDiyg88QC3oEyNFWkMWQUrFQagzJjxLiYpoqrjcaQkPN3P+XxxH8f6PEk97/odMd/7vHhd3j5Jhq3wHJN+WB9p7nMrBiuDDiIS2VdAuzefek/HRcfb1eff/SHb/3h++JwXH091u8/eCBB8RwiuoAyHsfQUrF0rlIaEhIxKJYEWAyy5VFAhH1Z1LWPZVG0Ma9j0YrLDRehf6t9l/tGG/oHWPlWOhiBjVAAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="velocity"
+        title="velocity"
+        src="/static/aa969be36c45fa87d2a8e931512a8b23/78612/velocity.png"
+        srcset="/static/aa969be36c45fa87d2a8e931512a8b23/6bdcf/velocity.png 315w,
+/static/aa969be36c45fa87d2a8e931512a8b23/f058b/velocity.png 630w,
+/static/aa969be36c45fa87d2a8e931512a8b23/78612/velocity.png 1260w,
+/static/aa969be36c45fa87d2a8e931512a8b23/7ca1f/velocity.png 1890w,
+/static/aa969be36c45fa87d2a8e931512a8b23/9b204/velocity.png 2520w,
+/static/aa969be36c45fa87d2a8e931512a8b23/c2d13/velocity.png 2560w"
+        sizes="(max-width: 1260px) 100vw, 1260px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong> Bungeecord Prometheus Exporter plugin exports Bungeecord/Velocity stats for Prometheus</p>
+</blockquote>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 807px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/5462d7862dfedfa8f76b3f2840398b7c/d2a60/alerting.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 75.87301587301589%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAC4jAAAuIwF4pT92AAACSElEQVQ4y4WU2W7bMBBF/UGtY0kUF1GiVlM7JcdLgiQFiqL9gP7/wy1IL5HdAn0YDKHlzNyZK62efAqPcPihQKl71P2EgMYgLAah5whuIW/3Qp64c1o00K1BkmmY+YjV2gvhBQw+ieDRFCRS8AkHofIMvIBDrkBFipAlICxx58dgUYbVehPiyzoAZRGmqYLKt8iqNzDZuC6uIBEXEHEJLvO/QLdiXGHlE+EqxkmM37+26LXGuPuOohqRpCVUtsWTx/B1E8IWX3sUG5/durSQZaxCphCrCoQpbDyJOi3x7ftPHE+vOL2843h6Q9sZdP2Mbtih7Sdkub4DLru9SfZIBC4UqjjHOJ2g6x66GVwexmdMuwPqdoBV9NjhHfDJo06KH0ZgPEEVpxjnI5p2RNMZF+O0h5n2qNsRTCj3/G0xFniBsiXQdkh5giIp0Qx71922GVDqDlXdo6oHZEUNKhTsOxYYXmcoUgRcYcOSs2QrIQglGFPoagMpNTx7LRDwAwFii1nrUOky5+ocdvu2M66QyhxzrheSSQQmU8i6QqN7aN2jyDXKokYsM3gehe8x+LaQnSERDsgXQPMIDCKFdGfw8fEDp9cPHF/eXZ6fT+iGGYPZo+kmN4IoKRBcZS8lL4HEdji0MObgAHUzullay0zzAWY+gEXq7IpAXDb7uZT7LV+A0dDAjM93wLabHND6MbUepNKZfWnsfwLDKEXcddC1cbLKbXeJ1mWVVRAyQxBG8AL+fyDhKbpmQKwaZ6Pg7k/zGc4yD5/cFfgHGuwCwH/KjVkAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="alerting"
+        title="alerting"
+        src="/static/5462d7862dfedfa8f76b3f2840398b7c/d2a60/alerting.png"
+        srcset="/static/5462d7862dfedfa8f76b3f2840398b7c/6bdcf/alerting.png 315w,
+/static/5462d7862dfedfa8f76b3f2840398b7c/f058b/alerting.png 630w,
+/static/5462d7862dfedfa8f76b3f2840398b7c/d2a60/alerting.png 807w"
+        sizes="(max-width: 807px) 100vw, 807px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong> AlertManager notifies discord, and sends me a text message when the server is down</p>
+</blockquote>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1260px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/9cca1be2db84ee44e9dd435ef52b971a/9b056/wither.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 44.44444444444444%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABbUlEQVQoz0VRW27cMAz0IQLsriWLTz12nRQN+tf732sC0mnzQYxJDofUeDtsgn2B/AnxBfEndnIUMpRAdtyrYCfDrTLe9obb3nDfCbeM6zvzR8P21098ysQ7dTwzHH90YTTDb114ccfJAx8ycVLHJ3WYOXZV6DlRVeG/XqAxYB8L27lODJugphDxxOETFpeTQthBZD89mzjYIGNB5gL7hMyJKgYaHRu9JqrHRkGbjmKG9uyoaqjDcAxHdUVbHcUN9BooouA1Mg61xLiUZsdWTZMgY6JZeKa58RCDrJVINkDesTdBIUEVTTzEM5p1FNLkbTxji6N5T4zTm3sSWu85fA1dteinICtKU+yH5Gzkce3GfYJ8YCcB9ZHDRSQJUQtSbE6f2C6O+n+BR2PwmDkXNm1NHY+D09wo5rNCrEleE70UoJ88Ls36Pz5981mxHfFDSK5nsqa5EVnr/i1ouBfCYRdG/14pvS8s1xKWFP0Ck0z4/LVB6oYAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="wither"
+        title="wither"
+        src="/static/9cca1be2db84ee44e9dd435ef52b971a/78612/wither.png"
+        srcset="/static/9cca1be2db84ee44e9dd435ef52b971a/6bdcf/wither.png 315w,
+/static/9cca1be2db84ee44e9dd435ef52b971a/f058b/wither.png 630w,
+/static/9cca1be2db84ee44e9dd435ef52b971a/78612/wither.png 1260w,
+/static/9cca1be2db84ee44e9dd435ef52b971a/7ca1f/wither.png 1890w,
+/static/9cca1be2db84ee44e9dd435ef52b971a/9b056/wither.png 2419w"
+        sizes="(max-width: 1260px) 100vw, 1260px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong> I made the dashboard publicly accessible for players so they also have insights. In this case, an unbounded wither farm generated over 3K skulls and is causing server lag</p>
+</blockquote>
+<h3>How can I search through my server logs?</h3>
+<p>Minecraft server uses log4j and outputs the log to <code class="language-text">latest.log</code>, and also compresses logs into gzip archive files.</p>
+<div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh">-rw-rw-r-- 1 admin admin   3355 Jan  1 00:49 2022-01-01-1.log.gz
+-rw-rw-r-- 1 admin admin   2902 Jan  1 00:50 2022-01-01-2.log.gz
+-rw-rw-r-- 1 admin admin  45860 Jan  2 00:06 2022-01-01-3.log.gz
+-rw-rw-r-- 1 admin admin   1728 Jan  2 01:18 2022-01-02-1.log.gz
+-rw-rw-r-- 1 admin admin 108339 Jan  3 00:53 2022-01-02-2.log.gz
+-rw-rw-r-- 1 admin admin  33147 Jan  4 00:01 2022-01-03-1.log.gz
+-rw-rw-r-- 1 admin admin  68437 Jan  5 00:05 2022-01-04-1.log.gz
+-rw-rw-r-- 1 admin admin  24910 Jan  5 02:52 2022-01-05-1.log.gz
+-rw-rw-r-- 1 admin admin  18207 Jan  5 06:39 2022-01-05-2.log.gz
+-rw-rw-r-- 1 admin admin  19774 Jan  6 00:00 2022-01-05-3.log.gz
+-rw-rw-r-- 1 admin admin   1423 Jan  6 00:00 2022-01-06-1.log.gz
+-rw-rw-r-- 1 admin admin  37541 Jan  7 00:01 2022-01-06-2.log.gz
+-rw-rw-r-- 1 admin admin  53038 Jan  7 20:36 2022-01-07-1.log.gz
+-rw-rw-r-- 1 admin admin   4704 Jan  8 00:28 2022-01-07-2.log.gz
+-rw-rw-r-- 1 admin admin  14767 Jan  9 01:38 2022-01-08-1.log.gz
+-rw-rw-r-- 1 admin admin  18577 Jan  9 03:27 2022-01-09-1.log.gz
+-rw-rw-r-- 1 admin admin  46618 Jan  9 07:08 2022-01-09-2.log.gz
+-rw-rw-r-- 1 admin admin  21783 Jan  9 17:13 2022-01-09-3.log.gz
+-rw-rw-r-- 1 admin admin   6616 Jan 10 00:04 2022-01-09-4.log.gz
+-rw-rw-r-- 1 admin admin  23406 Jan 11 00:00 2022-01-10-1.log.gz</code></pre></div>
+<blockquote>
+<p><strong><em>NOTE:</em></strong> It is very difficult to search through the Minecraft server log because they are segmented.</p>
+</blockquote>
+<p>Introducing ELK stack to our infrastructure. Elasticsearch is a search and analytics engine. Logstash is a server‑side data processing pipeline that ingests data from multiple sources simultaneously, transforms it, and then sends it to a “stash” like Elasticsearch. Kibana lets users visualize data with charts and graphs in Elasticsearch.</p>
+<p>You can deploy ELK stack in one command using <a href="https://github.com/deviantony/docker-elk">docker-elk</a>!</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 770px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/9d1f8af96696c1f93a7c97123815fd0a/f4b77/elk.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 72.06349206349208%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACNUlEQVQ4y32Ty27TUBCGveRFeAEkHoANj4B4A/ZIIFas2HZRsQJxW7DoAlVISICgKqUqbaloA6FCSasktRM7ce34kvh+4n7Ix3KapIXFSOOZ8X/mn/lHieOYyqIomloQBGRZxngcEIbhhXz1Pft/YcpioCgSE4GmaRwe/qZ2sM9gYJKm6RzgZSYBZ1+rfMcZEqc5a6tLHO6v4XrBNC9EJsGTJCFNk6lfYSiVUxakxEmC6zi0TlRurDzm0cYHSDKCKEQIwc7uHs3mMZZl0x8MZPemaTIajc4pFzPq9nQajSN6usEkz3EtiytvXnN/exMywSgsAQ9qv2i1O3ieh23bWJbF0HHkzOcou67HiaqViSQhiyPe7mzSMbqcTQRRXFLO81wua9bSf1H2/RGWbcvXc0BtD2l3LE60PnpPlx2qmibzvu/juK70ZxejLErA9z1O7TGt2gv+vL/Kp5fX+Li6hOe5TITg+94P2u2OnJ+qagxMc05GyixY2WlEnELj2zLW+nW6G7fZXX+G0WshxIQwLHVZMKpsFkNZlExRXGxx4EVs1Y/RRxlnQByVdXJmU9mkLDakzF9JSJbl/Kp/ZuXuPb7cfEjtwXMMtSsXVVDe+LrF5ta2nLXR7zMejy92eB6ICIOYev0d+8uvUG895eedJ+gdjTRL5TabR8c0mke4nsfpqTWVywXAMljROsONQhpGB923SNKEeHopQl7LZZQv7bBcTIw7dNC1LqbRl9IoAP53w1WHfwGIHB0JOBHQ6gAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="elk"
+        title="elk"
+        src="/static/9d1f8af96696c1f93a7c97123815fd0a/f4b77/elk.png"
+        srcset="/static/9d1f8af96696c1f93a7c97123815fd0a/6bdcf/elk.png 315w,
+/static/9d1f8af96696c1f93a7c97123815fd0a/f058b/elk.png 630w,
+/static/9d1f8af96696c1f93a7c97123815fd0a/f4b77/elk.png 770w"
+        sizes="(max-width: 770px) 100vw, 770px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong> “ELK” is the acronym for three open source projects: Elasticsearch, Logstash, and Kibana.</p>
+</blockquote>
+<p>There are many ways to send a log to ElasticSearch. You could use <code class="language-text">filebeat</code> to tail the <code class="language-text">latest.log</code>, or use a <code class="language-text">logstash</code> module that works with Minecraft server log4j.</p>
+<p>However, we want something generic that works with our containerized Minecraft server or any containers. So we use a logstash agent to send docker container logs to <code class="language-text">Redis</code> for temporary storage. And a central logstash agent will pull from <code class="language-text">Redis</code> and push them to <code class="language-text">ElasticSearch</code>. Finally, we have <code class="language-text">Kibana</code> that reads from <code class="language-text">ElasticSearch</code> and visualizes the logs</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1260px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/c8615b6d26d7b7a8160fd46758d8f8d4/c2d13/kibana.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 50.79365079365079%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAC4jAAAuIwF4pT92AAABhUlEQVQoz6WQy27bQAxF9eH9gAIBChiIX7Kd/Eb+JKs0izZJ5Yes0Qw577nFUIq7aHcd4IAgJBySt1kcHvFtucNmu8d6s8fqxk5qu3/Etn3AenvAZnuQf5brHe5XLe5XOyyWrfB10eLL3QYNJ6Dg/18fgafXhObX8Yyf7x3UaNBfFTQzQoxQTBgt46gVQoggZ+FCgPUenR7A3iHFiCsZvPRH5BSB5NFclQZbjxAzRkN4H3qQtfh+7tCpAa+XDooIPy4nXEaFkxrwfHzDWY9g53DSSvqRGWQdmo+Lwnl06E0AsYVjC0Mk1c69915yyTmj5DzdKH255VVKgQ8RzUgWzie4kERIdRIztDEiZmsRYxLq6TUOH4JQhZVUB5Ui35tBGVgX5GQREgvGEIhIKjMjxigbpk9SvgkrN6E2DOfr1HnDKvnETJAIE3IpIv0jyn8LlaZZmMFsZRuexVVknZtPjkKYq5ASSpnyq0+EbINsVzE0ZVcZtZ43NCK31iGEMOX4D+qAOvw337r1m40EltkAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="kibana"
+        title="kibana"
+        src="/static/c8615b6d26d7b7a8160fd46758d8f8d4/78612/kibana.png"
+        srcset="/static/c8615b6d26d7b7a8160fd46758d8f8d4/6bdcf/kibana.png 315w,
+/static/c8615b6d26d7b7a8160fd46758d8f8d4/f058b/kibana.png 630w,
+/static/c8615b6d26d7b7a8160fd46758d8f8d4/78612/kibana.png 1260w,
+/static/c8615b6d26d7b7a8160fd46758d8f8d4/7ca1f/kibana.png 1890w,
+/static/c8615b6d26d7b7a8160fd46758d8f8d4/9b204/kibana.png 2520w,
+/static/c8615b6d26d7b7a8160fd46758d8f8d4/c2d13/kibana.png 2560w"
+        sizes="(max-width: 1260px) 100vw, 1260px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong> You can visualize, filter, and search Minecraft server logs</p>
+</blockquote>
+<h3>How do I setup all of these technologies?</h3>
+<p><strong>Ansible</strong> does just that. It is an open-source software provisioning, configuration management, and application-deployment tool enabling infrastructure as code</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1260px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/eb568520c8a3ae37d925cba49fa4a83f/d2782/ansible.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 77.46031746031747%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABrklEQVQ4y4VUS67bMAx899/1IL1PgQJdFF20TixZ/7+mIC05SvKKGqBlAeJohhz6A0AHvXqfK0pryCPSCPpWKeGmFaRzaHS8dz6/5MqPV0A6GGq9AGeU3hlwOw4Ia1HP4/OZ6e+AxMbXcgH5WmFLgQwed6MhjMFuDA5rEWpBrJVIPDNcaVPyZwxdrdi9xx8hcFMKrhRW81/JR07MKi+1I3l+AJLkuzG8Hymce0leNrzeYmQZj9o11NYQWsMRPDYpmWE4pZ6ArzUc5e0EsKfEXZ4xgW3OEM4NhhomRr6ovUpOKXXrHO+//vqJL9+/IbXKLCmoQSTPpMTdJXbUFBXCpeQJcJW8p4gf1nDtJmAZ3wR6OIddKQit+YIB9rlt5ipSYsAptywG3527GLqcry4vTnkwnFcQYHjpMkWkpsSI30IwYF6MvWD824dUx7ywDIttdjb1wzaLynfA2GYjCoOToWl2N62xaYXtkLgrBWntOS2lkJI+Jubd2GRimoL1x0BzTD6UMTCYcJZL0Efyk7FXwCmBWBIoddaXAh08e3A3mru8aw3lPWwISOflfZRH/gX+BZkcuxhHZQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="ansible"
+        title="ansible"
+        src="/static/eb568520c8a3ae37d925cba49fa4a83f/78612/ansible.png"
+        srcset="/static/eb568520c8a3ae37d925cba49fa4a83f/6bdcf/ansible.png 315w,
+/static/eb568520c8a3ae37d925cba49fa4a83f/f058b/ansible.png 630w,
+/static/eb568520c8a3ae37d925cba49fa4a83f/78612/ansible.png 1260w,
+/static/eb568520c8a3ae37d925cba49fa4a83f/d2782/ansible.png 1864w"
+        sizes="(max-width: 1260px) 100vw, 1260px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong> <strong>Ansible</strong> automates setting up everything</p>
+</blockquote>
+<h3>How do I fix crashes in production?</h3>
+<p>Sometimes everything runs well in the local development environment, but the server crashes constantly for the production environment. Luckily we had set up many metrics that can help us. The first step is to use <strong>Kibana</strong> to find any errors.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1260px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/e5bfa326be76900d871bcd933c6d87d6/c2d13/error.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 50.79365079365079%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsTAAALEwEAmpwYAAABUklEQVQoz5VRy04cQQzsD+cHwgUhsuwssxvxG/xJAicuCWGz0Txst9uvQZ6VAOWWktWWulXlKne5Ptxfbfrd7rDtDttu/179/n7Xf+vuDl0+7b9u+82239z2N7f9zab/cn13cdkVssWW/0Cs558aD89WXo+nn79exwkRSc3UzMz13MxF9QjTWIlaC897Nz/CJCpLWBnGubKIhoiqqkhTnd1dREUEiJ5Pv1+G0wCQwu4RMTaSVby8/J1OcxtIuQlRRRyJnlStVq7MtXLjlpVIeXdP8xHmUWZkFmsarQlSBRwQfrSmlTlZ3NKReaxZIz7KYynDBLWJWpLXyQPRk5kjEiIBIAAiIjOranyCR5Q5ufZOhiQ/pm3OsWl+XYm5r3k/JmfmcSZueibjp8yUqIjZmNs/zLTtS1l1XSy4CQDNMCB+V/UZYPWcIKqUnyVpYV35ud4AGBcwyZdotDQAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="error"
+        title="error"
+        src="/static/e5bfa326be76900d871bcd933c6d87d6/78612/error.png"
+        srcset="/static/e5bfa326be76900d871bcd933c6d87d6/6bdcf/error.png 315w,
+/static/e5bfa326be76900d871bcd933c6d87d6/f058b/error.png 630w,
+/static/e5bfa326be76900d871bcd933c6d87d6/78612/error.png 1260w,
+/static/e5bfa326be76900d871bcd933c6d87d6/7ca1f/error.png 1890w,
+/static/e5bfa326be76900d871bcd933c6d87d6/9b204/error.png 2520w,
+/static/e5bfa326be76900d871bcd933c6d87d6/c2d13/error.png 2560w"
+        sizes="(max-width: 1260px) 100vw, 1260px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong> Searching for errors for the past 12 hours in the log</p>
+</blockquote>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1081px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/80342d8ee8d4a0484d0d5c3e955dd551/71ee9/error2.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 68.88888888888889%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABxElEQVQ4y12TaXLkIAyFff+zpCaZVH7mPpOtbUDsYF5KYmlPu0rFYpCePonNmA/s+1+UEtEakFKCMQRrnRjPDdEaldLQ2qwzOReklJFzxnme2Kz9glKvqDWBv1wyyFpYxw4tiGiNbFprKKVAZGXfOYcQIkKMw6H7gtJv4rABKKXIIee8jCSX/FqLE+vgfYDzHrVWXL+NiFN+Rq2xK8x5RO/O7HAoClnpg+oYo9yJKYnKjRnebi/CkD9myJzYOkcrvEg4GtmnC0u2PtfYD8UKP3Ecl6LkLBf5YIwJ3t9TZeW8v9Ty2pg15/3Num/oybBxUUpP03v4EISVtR2B7PmwUudAHJCL0VrD2dpIeX95UHhX0NWN9jG0lHYMdhWt1IpSKjal/+H7589/fXgcSqwXo6d1Z9b58X/en/04M5E+PNTrctirTNKHnd+o8Kj8VCsqieQ/p7pS7o39thq7XBiGwXA2sV3w+5yDc5ri7JwM6RP7YJhSESdmVJGjT1Wzhfb9kJfBT26q4qKIw3MW5faEUgKs89KoXBh+nxydFQvwAT3Jm22CZzq52ubcD4x5RwgW3kfhxh3PqfKz4ufYBiOxsZ4pPtovalg7bOZXFO0AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="error2"
+        title="error2"
+        src="/static/80342d8ee8d4a0484d0d5c3e955dd551/71ee9/error2.png"
+        srcset="/static/80342d8ee8d4a0484d0d5c3e955dd551/6bdcf/error2.png 315w,
+/static/80342d8ee8d4a0484d0d5c3e955dd551/f058b/error2.png 630w,
+/static/80342d8ee8d4a0484d0d5c3e955dd551/71ee9/error2.png 1081w"
+        sizes="(max-width: 1081px) 100vw, 1081px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong> Java is hung when opening files and crashed the server</p>
+</blockquote>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1172px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/cce89fa0d19e7f554cadff6bb85e1a37/511f0/error3.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 70.79365079365078%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABrklEQVQ4y22TC27EIAxEc/+Dbdttu2doL7AJ2IZ8gKlsPslKjYSAhDzG9nhiPjDPXyD6QAGQcwIxw3sC60zU1gIignMe3nuIiH3b9x2w/4qNSSRhWb7BfEcpQMoJLGJQkdBAbHtd973OClzXFdu2IaVcgSwZy3IH8W0AO0jCf0Cu+wbVM3FdkfIAXhReQyY6ARfINfx6CZvKECKOI2GSkLE4BX60XCQEVSZicx8GILbc9dBNodRL9YxGNkJmvg3gNU+nQhoKuzKFpJSQSzmLEkKG9w+IfFZgyeO2GOJY6wgxGjTGaMqO47B/SimWfx0T8YHn8xOe3ofC0zYycuecM7uobapSXy9phQvt8inGAqIHQrgPoCrQjzrb+rJXZf19ztnU6ay20UpPbArvIHo7FQ4zd3tUhcviqjoiA6qpt23Hvh8tbDN2hnOPF2NffSghDttwq+jV4GbsfTeVw4ezGptuw4d2uHWKjt5+1nrevxi7qru0ngG1l/ndgKmFXD13dooWQ0N+znNNCZGF2ztkANdNQ/zFuv4gZ2DbVgsjxtqjvVf7WotS8Pr0/GkO/wDqRjxldS7aNwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="error3"
+        title="error3"
+        src="/static/cce89fa0d19e7f554cadff6bb85e1a37/511f0/error3.png"
+        srcset="/static/cce89fa0d19e7f554cadff6bb85e1a37/6bdcf/error3.png 315w,
+/static/cce89fa0d19e7f554cadff6bb85e1a37/f058b/error3.png 630w,
+/static/cce89fa0d19e7f554cadff6bb85e1a37/511f0/error3.png 1172w"
+        sizes="(max-width: 1172px) 100vw, 1172px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong> Error spiked at 20:30, 17:05, 16:25, and 15:48</p>
+</blockquote>
+<p>After looking at various metrics for CPU, memory, network, and storage, we found the issue in the storage</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1260px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/1ea8565320d5241ecc9620d653c8824a/a4f81/aws.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 39.04761904761905%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAC4jAAAuIwF4pT92AAABJUlEQVQoz1WSi27DMAhF8/9fuB9YtWlTkzq2eRhyJ4jTdkjICPvyOMlS9h2PUtBax2WHO5gZpZR0FTnzxwEzR+8doStlh8y7MB0Di5nh3cwP+AG4e1TIXBODzzhsjPGMfabVPM+ltg4SxVoJP4+O+95Ballwbx1fa8XHbcWjESpJNlRV1E6pu90r1j10lE2XEIqOHDdcRGHucwWD6oCb5RsWhc+R4u7SiWq+CyRL6x1ElFwijmR4TBH5YPluF994Hy7C/1AsIQxWMalN94Q/0FnAatiaYueBJuO58sWxsoJjE/Nzwk6MxorPe8X31pJhl5FNiDlXaiQgFpTGZ9MxUBpha5y6rRJ+S89mk6FOPxn6ZBh/QEwSZxSJ+JhfWyfT2MTtdfcHgEBzxKGV/aEAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="aws"
+        title="aws"
+        src="/static/1ea8565320d5241ecc9620d653c8824a/78612/aws.png"
+        srcset="/static/1ea8565320d5241ecc9620d653c8824a/6bdcf/aws.png 315w,
+/static/1ea8565320d5241ecc9620d653c8824a/f058b/aws.png 630w,
+/static/1ea8565320d5241ecc9620d653c8824a/78612/aws.png 1260w,
+/static/1ea8565320d5241ecc9620d653c8824a/a4f81/aws.png 1508w"
+        sizes="(max-width: 1260px) 100vw, 1260px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong> Read bandwidth also spiked at 20:30, 17:05, 16:25, and 15:48</p>
+</blockquote>
+<p>Turns out when the operating system is running out of memory, so it writes to a swapfile. A swap is a space on a disk that is used when the amount of physical RAM is full, but the speed of the disk just can’t keep up. When swapfile hijacked the storage I/O, Java I/O threads will just hang and time out. Therefore, the solution was to increase the ram of the operating system or decrease the ram allocation of other containers.</p>
+<blockquote>
+<p>Fun Fact: RAM is 4 to 7 times faster than a Solid State Drive</p>
+</blockquote>
+<h2>The End</h2>
+<p>You made it to the end! This over-engineered server does the same thing as you were to launch the jar directly and it is still a vanilla server haha. If you are interested in a tutorial, free feel to leave a comment. Also suggestions and feedback are appreciated!</p></section><hr/><footer><div class="bio"><div data-gatsby-image-wrapper="" style="width:50px;height:50px" class="gatsby-image-wrapper bio-avatar"><div aria-hidden="true" data-placeholder-image="" style="opacity:1;transition:opacity 500ms linear;background-color:#080808;width:50px;height:50px;position:relative"></div><picture><source type="image/avif" data-srcset="/static/aa4f758c551cf478f56b094f8c2e5f1b/d4bf4/profile-pic.avif 50w,/static/aa4f758c551cf478f56b094f8c2e5f1b/ee81f/profile-pic.avif 100w" sizes="50px"/><source type="image/webp" data-srcset="/static/aa4f758c551cf478f56b094f8c2e5f1b/3faea/profile-pic.webp 50w,/static/aa4f758c551cf478f56b094f8c2e5f1b/6a679/profile-pic.webp 100w" sizes="50px"/><img data-gatsby-image-ssr="" layout="fixed" data-main-image="" style="opacity:0" sizes="50px" decoding="async" loading="lazy" data-src="/static/aa4f758c551cf478f56b094f8c2e5f1b/e5610/profile-pic.png" data-srcset="/static/aa4f758c551cf478f56b094f8c2e5f1b/e5610/profile-pic.png 50w,/static/aa4f758c551cf478f56b094f8c2e5f1b/e9b55/profile-pic.png 100w" alt="Profile picture"/></picture><noscript><picture><source type="image/avif" srcSet="/static/aa4f758c551cf478f56b094f8c2e5f1b/d4bf4/profile-pic.avif 50w,/static/aa4f758c551cf478f56b094f8c2e5f1b/ee81f/profile-pic.avif 100w" sizes="50px"/><source type="image/webp" srcSet="/static/aa4f758c551cf478f56b094f8c2e5f1b/3faea/profile-pic.webp 50w,/static/aa4f758c551cf478f56b094f8c2e5f1b/6a679/profile-pic.webp 100w" sizes="50px"/><img data-gatsby-image-ssr="" layout="fixed" data-main-image="" style="opacity:0" sizes="50px" decoding="async" loading="lazy" src="/static/aa4f758c551cf478f56b094f8c2e5f1b/e5610/profile-pic.png" srcSet="/static/aa4f758c551cf478f56b094f8c2e5f1b/e5610/profile-pic.png 50w,/static/aa4f758c551cf478f56b094f8c2e5f1b/e9b55/profile-pic.png 100w" alt="Profile picture"/></picture></noscript><script type="module">const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}</script></div><p>Written by <strong>weihao</strong></p></div></footer></article><nav class="blog-post-nav"><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/how-to-use-docker-without-sudo/">← <!-- -->Use Docker Without Sudo</a></li><li></li></ul></nav></main><footer>© <!-- -->2022<!-- -->, Built with<!-- --> <!-- -->❤️</footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/minecraft-server/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-b227d9031ab4094e5021.js"],"app":["/app-800b5221e72322b43213.js"],"component---src-pages-404-js":["/component---src-pages-404-js-bb1698d01a7f9dde5caa.js"],"component---src-pages-index-js":["/component---src-pages-index-js-c71c2bb2dcd7531957ec.js"],"component---src-pages-using-typescript-tsx":["/component---src-pages-using-typescript-tsx-20f655bfb94bd369e9d3.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-3b9271c723e976d3b426.js"]};/*]]>*/</script><script src="/polyfill-b227d9031ab4094e5021.js" nomodule=""></script><script src="/component---src-templates-blog-post-js-3b9271c723e976d3b426.js" async=""></script><script src="/commons-85d93be29fb9a24ec01b.js" async=""></script><script src="/app-800b5221e72322b43213.js" async=""></script><script src="/framework-e413e527015be9a1bdfd.js" async=""></script><script src="/webpack-runtime-e50f7582626d33aa810f.js" async=""></script></body></html>

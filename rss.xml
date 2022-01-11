@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://weihao.github.io/blog</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 11 Jan 2022 22:52:23 GMT</lastBuildDate><item><title><![CDATA[Building a Minecraft Server With State of the Art Technologies]]></title><description><![CDATA[Intro Minecraft is a great medium to toy around with cutting-edge technologies, and recently many tutorials talking about them. However, in…]]></description><link>https://weihao.github.io/blog/minecraft-server/</link><guid isPermaLink="false">https://weihao.github.io/blog/minecraft-server/</guid><pubDate>Sat, 01 Jan 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Intro&lt;/h2&gt;
+&lt;p&gt;Minecraft is a great medium to toy around with cutting-edge technologies, and recently many tutorials talking about them. However, in this post, we deploy them in production which presents more challenges and problem-solving.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1260px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/377c5b7138840073ece8013291f56054/0c156/architecture.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 117.77777777777779%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAYCAYAAAD6S912AAAACXBIWXMAAAsTAAALEwEAmpwYAAAB7ElEQVQ4y42Vh47DMAxD/f//WKDoSvfeIyqeAOZ0rtPUgOA0sWmSktV0uVxsv983cTwefd7tdsY3gnf5qOvaSiOdz2fbbDa23W49ALter3a73ex+v9t8PrfJZGKHw8FOp5OHwEqgyb6M1+tlq9XKAZfLZcM4AuagSS/bAsDxeNxYAEMOimt+YqiF+IdsgLBBVkSwCJrawLQIAHx9PB7OkN9iGMG0p5Ph8/l0oAi4WCw8SSUfOwGRx2YAAQN0MBh4kkqyOyUDhI8AwzaXiPyYpE6GMFqv184OQII6zRPzc1IAo2yYp9OpzWYzGw6H/lsHUAG8d4a/1OFoNPLbBDNuFoGvKiOeWfdVsgYFTQIAEWveEaV77QyhDANOQgL+ECQkbpL5sCHEVJ46IIvQj09IYwFNQs9qHIBzGAMAvkk+3vb7/T+GZJITuRF4oppjRpoAVSI6iGclRmoaDzm1dOGVRYFJEb7G+vvoNnnZqIhhR/tipsBhXFWVM5SvH3UYQSUh1iF+cn8BJnq93j9AJZF9KV6lCKQGCyPaFzPS8VsVwHdmksIaFCS1KF6QGHUXJYJEqTRyia1XDxBA2aQ2hVRKggQQfFNWOYxD8kbR3BSosgmQ2DwlG5YA6d8QP5lbAeWF5OTtiwToJpQqIkp+A7jlWSiud3a6AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;architecture&quot;
+        title=&quot;architecture&quot;
+        src=&quot;/blog/static/377c5b7138840073ece8013291f56054/78612/architecture.png&quot;
+        srcset=&quot;/blog/static/377c5b7138840073ece8013291f56054/6bdcf/architecture.png 315w,
+/blog/static/377c5b7138840073ece8013291f56054/f058b/architecture.png 630w,
+/blog/static/377c5b7138840073ece8013291f56054/78612/architecture.png 1260w,
+/blog/static/377c5b7138840073ece8013291f56054/0c156/architecture.png 1473w&quot;
+        sizes=&quot;(max-width: 1260px) 100vw, 1260px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; Building a Minecraft Server isn’t all about using &lt;strong&gt;Paper&lt;/strong&gt; or &lt;strong&gt;Velocity&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1260px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/19ebcbf8083b01835aa74c9f6a6f6d0d/c0786/infra.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 108.57142857142857%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAIAAABPIytRAAAACXBIWXMAAAsTAAALEwEAmpwYAAABoklEQVQ4y51T2W7jMBDz//9mkASxLejWaCSNXFRM3HRzLcoHAwbmoEjOtL1AzpmI8kAcIKI0wMyomfbq3nu7QURijPM8n06neZ6JiJmdc9Za731r7drsvV/XVSllrcWGEAIRYbnWupTSexeROoDpzCwiUynlcrmcz+dSSq0VxDC7tZZSEpFSCjPvX2PM4XAgom/aNNBaK6XQDTln773WWn4DLETk+uacc0qp1loGmBnaLMsSQui93wvZB34ESynFGEUEUv1T/bTt2szMZgBsY4zeeyLqveO33/A4boIAWmv4AWOZGWrFGLfXmHrvIQQUvSL8rnlZFmPM00d+aN62zTkHVUUkpVRK+d/N27YhVVDFGOO9h2HzPDvn9jA+b4ZICAlyhhjywBvyV9rOOWyG1R8d/mmGVdjmnAPtWqsagG07r9bar4SBHhJ2r7PW+ng87lanlKy1OB4c5vSGVUpJKYUjw82EEGqtIYRlWZj522et9bqutVYRcc7tkSQia+0eeCy4XzOBnlIKIltrQwiwSmttrX0MzPOretT5c0hw+n+I5xcjPA1kTsCgmAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;infra&quot;
+        title=&quot;infra&quot;
+        src=&quot;/blog/static/19ebcbf8083b01835aa74c9f6a6f6d0d/78612/infra.png&quot;
+        srcset=&quot;/blog/static/19ebcbf8083b01835aa74c9f6a6f6d0d/6bdcf/infra.png 315w,
+/blog/static/19ebcbf8083b01835aa74c9f6a6f6d0d/f058b/infra.png 630w,
+/blog/static/19ebcbf8083b01835aa74c9f6a6f6d0d/78612/infra.png 1260w,
+/blog/static/19ebcbf8083b01835aa74c9f6a6f6d0d/c0786/infra.png 1873w&quot;
+        sizes=&quot;(max-width: 1260px) 100vw, 1260px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; We will deep dive into this infrastructure and what problem it solves&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Problems&lt;/h2&gt;
+&lt;p&gt;I will share a problem first and then a way I solved it. Many interesting problems are common and already solved by the tech community.&lt;/p&gt;
+&lt;h3&gt;How can a team work together on the server?&lt;/h3&gt;
+&lt;p&gt;Use &lt;code class=&quot;language-text&quot;&gt;Git&lt;/code&gt; for tracking changes in any files, but before we use the version control system &lt;code class=&quot;language-text&quot;&gt;Git&lt;/code&gt;, we need to figure out what files need to be tracked, and put any unrelated files like logs, and user data into &lt;code class=&quot;language-text&quot;&gt;.gitignore&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;# plugins
+**/plugins/Pl3xMap/web/tiles
+**/plugins/Pl3xMap/web/images
+**/plugins/Pl3xMap/web/js
+**/plugins/Pl3xMap/web/css
+**/plugins/Pl3xMap/data
+**/plugins/GriefPreventionData/Logs
+**/plugins/GriefPreventionData/PlayerData
+**/plugins/LuckPerms/translations
+**/plugins/LuckPerms/libs
+**/plugins/WorldGuard/cache
+**/plugins/WorldGuard/worlds
+**/plugins/WorldEdit/.archive-unpack
+**/plugins/WorldEdit/sessions
+**/plugins/GriefPreventionData/softMute.txt
+**/plugins/CreativeManager/data
+**/plugins/CreativeManager/data.db
+
+# smp
+**/smp/data
+**/smp/backups
+**/smp/bluemap/web/data
+**/smp/bluemap/web/assets/playerheads
+**/smp/plugins/BlueMapFloodgate/playerheads
+
+# lobby
+**/lobby/data
+**/lobby/worlds/world/advancements
+**/lobby/worlds/world/playerdata
+**/lobby/worlds/world/stats
+**/lobby/worlds/world/uid.dat
+**/lobby/worlds/world/session.lock
+**/lobby/worlds/world/data/raids.dat
+
+# velocity
+**/velocity/data
+**/velocity/plugins/luckperms/luckperms-h2.mv.db
+**/velocity/plugins/luckperms/libs
+**/velocity/plugins/luckperms/translations&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;!-- ![gitignore](./gitignore.png)
+
+&gt; **_NOTE:_** A giant list of ignored files including logs, data, and images --&gt;
+&lt;p&gt;Sometimes, the config that we want to track has meaningless changes made by the server. We can solve the issue by using a one-way file synchronization system.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;When the source file is updated in Git, replace the file used by the server&lt;/li&gt;
+&lt;li&gt;When the file is updated by the server, keep using it but don’t sync the changes to Git&lt;/li&gt;
+&lt;li&gt;Note if the server added some missing properties to a file, it is not tracked. Even if it gets overwritten, the server will just add the missing properties again, therefore there is no harm but you just won’t know&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 461px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/7aa7a361d07131c8673f7c16f40ce51a/f816d/properties.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 81.58730158730158%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACXElEQVQ4y4XTa4/UNhSH8Xz/b0URUKbQSqi0S2dnh8k98SWO7Vyc21NNWAS0u8OJfvofv7FknZNIGUdWyl0pGkqhd0lekRcVcVpyjjNUY+nHGT8Euhuik1o4ypWTXjnlikxacuU4ZWJPM2zofqEZ1r03ez4v6ruZzk87rSxaGoyytPrKYY2nkS22cSzzxrpsLDdEPr9g43v69Ix8OJIc3pAe3lC8e7v3yeH1fr78+gpXZizeMlnzrOh+unA3PfBnf+SD/MSr4j0vs994Xf3By/QdvyQHXhQHXmRvSYYSvVnkalBr+6RoXhbCNDGGica0iFoihKISNbkqqKVAeY2bHdfatu2La/+EaF1mrqYQcM6jtKKuaj43Z/IxY2Pl+dq+yy+iwm2cxUDWrmSipVKWUlkSpSiUoRDtfq4bR6Udwniq68C6iX6Gbtp+EJXtzLnuSJtALq4XXHfREMuarFHotqPtAm0faH3AuBFte9wwM8zQT9sPonkOhHFgHAestQhRo5QiExmNbRi6AesstrWoTjEzcauicRjx3tP5DtMYhBAopalLwbE6kpiEZVoYh4E+9MzrzLZubOv6bUDficIlZ7yPIS7xlwyd5uhLhkgvSBWD68D5x+zBdmD9Y/5fpDuNcDWVKal0TVpmFHVJXCYUTUElKjKbUfYlYQmMy0i4IfpnSfg4P/C7v+Ov5sRRXLirzvwt7/lkr6sjiaeCemtQWORPRPM4E/qws61DSUVV1kglyVW+D6odDcu6/HflnhSNIdD1Pb7rMW1LVdXUQuzPTn3KuI6P93z9Q25//wLDdMpf8a0TqgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;properties&quot;
+        title=&quot;properties&quot;
+        src=&quot;/blog/static/7aa7a361d07131c8673f7c16f40ce51a/f816d/properties.png&quot;
+        srcset=&quot;/blog/static/7aa7a361d07131c8673f7c16f40ce51a/6bdcf/properties.png 315w,
+/blog/static/7aa7a361d07131c8673f7c16f40ce51a/f816d/properties.png 461w&quot;
+        sizes=&quot;(max-width: 461px) 100vw, 461px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; We don’t want to track useless updates like updated timestamps, or the configs get a random order.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;Why do I need containers?&lt;/h3&gt;
+&lt;p&gt;Containers allow apps to be easily and rapidly deployed, patched, or scaled.
+Containers accelerate development, test, and production cycles.
+Minecraft has many containers available and they are well-maintained:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://hub.docker.com/r/itzg/minecraft-server&quot;&gt;itzg/minecraft-server&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://hub.docker.com/r/itzg/bungeecord&quot;&gt;itzg/bungeecord&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://hub.docker.com/r/itzg/minecraft-bedrock-server&quot;&gt;itzg/minecraft-bedrock-server&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Should I use flat files or databases?&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Minecraft Java Edition uses file storage like MCRegion or Anvil format. In comparison, Bedrock Edition uses a modified version of Google’s Level Database.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We should use a database if the plugin supports it and most competent plugin developers will support MySQL. My three reasons for picking databases over flat files:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Databases have standard interface SQL or NoSQL, but there are no automation in flat files&lt;/li&gt;
+&lt;li&gt;Databases are more flexible, reliable, and performant&lt;/li&gt;
+&lt;li&gt;Databases improved storage efficiency and security&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;How can I see what is happening and what players are doing?&lt;/h3&gt;
+&lt;p&gt;When you run a Minecraft server, you don’t have much insight into what is happening unless you are logged in the game.&lt;/p&gt;
+&lt;p&gt;The following web apps are used to increase the visibility of your Minecraft server, and they run in your browser.&lt;/p&gt;
+&lt;h3&gt;Map&lt;/h3&gt;
+&lt;p&gt;BlueMap supports 2D/3D/player perspective, real-time player positions, and more.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1260px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/ac5cd7205b7d45aed51a48d886a1b2de/c2d13/maps.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 50.476190476190474%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsTAAALEwEAmpwYAAACN0lEQVQozwXBa2/SUAAA0P4NYxYzp5mbMNrCeMkgMB4DhLW0hT6hUOjr9nILtAUKc1uczhnjFuOHuZiY6B/1HMy91a6+e4J9WlMOKnyx3CudKY2WInNmWtAzBtd4mPu/ru7/3D0+/Xx6/HN3//fm6+/rH/++bB8W2Im5Xxzvl/nDmhRpDSMdK9ocRUSdYkesbBckazweiN9Gq89wUWcHBU7OD6LkYCep7qb7r7C0uhfvvijLh+cjnLHjDEjQOnEOcG5allBBhBW+X/cNQUMV1ilXleH7YaMlETUpmpJfYm+bz6KN5znudcciOXhMT2N0EAFbSfWLtIMzDt4BRN8raJtSb5rqWFFBzUNVkXvFLLWLkfROVnxTG+Mdh6RtQvRycNWbL7aDhcg6aQYSDDxe3vb9TwLrxCkj1rMzff20LZJZeg/j9UQTJCoTgnLiswvZhLox73oXw8G8ydsqN83I89w4bIhuAQYqD/OMRTJTgjLxk/4BVrfwqh6rGDiLCA1JwN0OERWEnL8CIgBGQGlmuqOT7ka7vrwJ155ilFparG3EqzqJ5bqtknpctVI0JGjwTrCAM225l0g267rPDRZnlEpo6DwMw3ATbtcrZVIoMgc16ahpk1i8viaqXnnEtx2cdUgLiZwmCYanB1wPnLnLD7PNZLGCy+XG84PARxDmh2ayLuN1DceK3Y+p9rwMMk1ESiApz7LdRQts1Nm1TNuJiXcJ3TWCwERbiPzZ3Ji5pwHKJTu7ReboPyIW0sCFHukYAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;BlueMap&quot;
+        title=&quot;BlueMap&quot;
+        src=&quot;/blog/static/ac5cd7205b7d45aed51a48d886a1b2de/78612/maps.png&quot;
+        srcset=&quot;/blog/static/ac5cd7205b7d45aed51a48d886a1b2de/6bdcf/maps.png 315w,
+/blog/static/ac5cd7205b7d45aed51a48d886a1b2de/f058b/maps.png 630w,
+/blog/static/ac5cd7205b7d45aed51a48d886a1b2de/78612/maps.png 1260w,
+/blog/static/ac5cd7205b7d45aed51a48d886a1b2de/7ca1f/maps.png 1890w,
+/blog/static/ac5cd7205b7d45aed51a48d886a1b2de/9b204/maps.png 2520w,
+/blog/static/ac5cd7205b7d45aed51a48d886a1b2de/c2d13/maps.png 2560w&quot;
+        sizes=&quot;(max-width: 1260px) 100vw, 1260px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; BlueMap generates 3d-maps of the Minecraft worlds and render them real-time in your browser&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I fronted &lt;code class=&quot;language-text&quot;&gt;BlueMap&lt;/code&gt; with &lt;code class=&quot;language-text&quot;&gt;Nginx&lt;/code&gt; because BlueMap’s internal web server is not robust enough. I also enabled &lt;code class=&quot;language-text&quot;&gt;Cloudflare&lt;/code&gt; caching for the map to save cost.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1070px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/0f05598e5de3af21da2a8dd05bac479c/121b3/cloudflare.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 82.85714285714286%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAAA7DAAAOwwHHb6hkAAACiUlEQVQ4y41UiW7TQBD1//8NQgVBD0CiHK2oaMnhpE5jJ41Tu4kTN67PnXloZuscAglWepq1196d997MOlVVIY5jpGmKJEmQZRvIYGYwt5EP3rXzvw2nLEu4rgvP8zAcDDAOpmDsNrKbAsSs2H9PRGiaBo0xFo2BI4uy0J66KRhFZfbO5Bf8OUxTI9tsUFcF6ipHmWdwjDFKVyDZ7m+0eib8CAjdGSFYEqYJYZkRkowwWxHyGpCzH1JG9CQAHNGw1+siDOfbLBtidEPGmUt4fQMc/WIcdVjjuy7jXY/xpsN43yPF2459/jBgS1l0ENqtPkSMNGdsSkZRM8qGkVe7KO8kZqX9JnvBc8VwGtMgjiJEUYS6rjXL2jA6M4OyZiw2hMmS9ONRTPr8kJIeKJtUjTXLkE3EkU28Ww+TybStBzSG8WVkKQuNU5fxcUg46dv5cZ9x0ifFZ49w6RPOPcLPKcE5cM2YvbJg1A2rAVlJKGpSymIWMW/dl8wkAdFd5mpKEATwfR95nm+NkcWrgPDqWsQmHPdsFv6C8H1M6MwIvZBxMZZIKpOUnFKez+eI4lgzlCFa3EbyI+MyYI2CizHj64jw7c5Kcu6xzmXtakK4uedDyrK5uC2UhOauqP8DLzIoZc8baespZdHOQOmFa8L9ipXe3SPhemqjFLK4nBa2VMRp0VdoO5LRem07pXVZ9Bs9Mjohoz8/RGdm4/CBFMGCED1ZiIG6YVXVkEylwHe3SwtCVpDGNDf/pO6UZYGB24fvB9seJga8mODOCWeutBvh05Bw6hKGkXVYejlcM5bZrouEumYo2snF0GYndXWfWL0micwZwZIxW7GWzXhhL4tJYrsofiK9SNbPhN9hpxuKOyKgFAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;CloudFlare&quot;
+        title=&quot;CloudFlare&quot;
+        src=&quot;/blog/static/0f05598e5de3af21da2a8dd05bac479c/121b3/cloudflare.png&quot;
+        srcset=&quot;/blog/static/0f05598e5de3af21da2a8dd05bac479c/6bdcf/cloudflare.png 315w,
+/blog/static/0f05598e5de3af21da2a8dd05bac479c/f058b/cloudflare.png 630w,
+/blog/static/0f05598e5de3af21da2a8dd05bac479c/121b3/cloudflare.png 1070w&quot;
+        sizes=&quot;(max-width: 1070px) 100vw, 1070px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;Cloudflare&lt;/strong&gt; is the world’s #1 ranked Content Delivery Network, and you can use it for free&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;Player Statistics&lt;/h3&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1260px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/b544eb20ba2fe4413c26b765d13212f7/c2d13/stats.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 50.476190476190474%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAC4jAAAuIwF4pT92AAABzklEQVQoz2WR21LbMBCG8wwd2kApgSbkZFuSpTghB1uWfKK5YNpe9P0f5etYDhSmFzs78+/q23+1o9n3MbPpNdPXPB0zm90wm45RyzFycYVafkEtPiPnV+j1NSa6CbGJblCra+4nn5g/3pJED4yyxR3b5YRdiHu2y3t2qwc2j7fYdMGfs+dXU/CzPvG7tRRqTjb/ym7xjW2IO7J5nyeBM9oYjZSCVCTkhcf6FmM2yCQmTVOO+z3d+YXmxwv7wwGdKpQURNEKW1gOx5xovQya0Smj/rFSinW0xroa33TESYyUCiklcRxRuppT4YnjNUJIpFJIIfC+wTpPnCSht2eNjDEBqJTEWkdeVGg9wHq9n+pcRV44jBm0viZFwuFY8HTI3wHNP6AQMfnJYv0zSok3YKoUTXfG+i7oQ69gZwy+fuZoq8Hxe2C/nhAJztWUl4fBhZQkSUxZOnLrSeL4g+7qjrz0/zt8BVZ1S+nrcKTehTaGbKMpreVU1GSZQev0UtO4qgv/nurB9TvgMHVoaMJ1+4Y+906sqzhZj0jiy8qSbGNo2zN5WQf4R2A4iqBta1zVXlYeDpWmGusbitKjtEEFXbHf76mqjtK37J62byv/BczpPHqxnbx1AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;stats&quot;
+        title=&quot;stats&quot;
+        src=&quot;/blog/static/b544eb20ba2fe4413c26b765d13212f7/78612/stats.png&quot;
+        srcset=&quot;/blog/static/b544eb20ba2fe4413c26b765d13212f7/6bdcf/stats.png 315w,
+/blog/static/b544eb20ba2fe4413c26b765d13212f7/f058b/stats.png 630w,
+/blog/static/b544eb20ba2fe4413c26b765d13212f7/78612/stats.png 1260w,
+/blog/static/b544eb20ba2fe4413c26b765d13212f7/7ca1f/stats.png 1890w,
+/blog/static/b544eb20ba2fe4413c26b765d13212f7/9b204/stats.png 2520w,
+/blog/static/b544eb20ba2fe4413c26b765d13212f7/c2d13/stats.png 2560w&quot;
+        sizes=&quot;(max-width: 1260px) 100vw, 1260px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;MinecraftStats&lt;/strong&gt; exports hundreds of in-game statistics so that users can view them in the browser&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We can create a sidecar container that mounts the read-only Minecraft server volume and uses Python to export player stats into JSON files. The container will auto-detect files changes and push them to GitHub. GitHub Pages automatically build and deploy the stats web page&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 939px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/e1ade34e5b58ffa29df0c6cd91ce588e/eafa0/github.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 57.460317460317455%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAC4jAAAuIwF4pT92AAABqElEQVQoz4VSWW7bMBDlf2xrs7iIkkhql2LLbYwgl+gZev9bvGJGlpumBfoxoACO3kph6h7tdENeeJx1jUxVkIXHKdU4JgrH/XzMIZZI8hL98h1lGNGOK1y7wP24ovt5h5ivb2jGFb6/8IT+AlU2SFWFjAlqZNrhbPw22kFVLawfeQo38H91s0CXHQQxhOEKVbY80jbQVYfl9oHxcse8vsMPV+RF4Dt2Yjx/70OgVbvwKcowoah7nFKDU2bYFtmu+lf4aWX1REgkBKrdhERWOKUKUWY4migr2BVFJSgH+niJ8i2jKOeMbDthWO9oxhtboqxz41G0NyTK/d6PJZ+yCDgbB1E3M3TZIMntcyGWFq6bsazv6Cj8ZmZAaQNs9w2pdjjEBLgVRirpLidAyqQMA5QNG1uscEgUUlnCuh7WDUjJ4sNeLGscU/NUxmeqWT2VKEhZFait/s+lhw1ipqbpSVEUL9H5eb8PEVGGJE7Q8zB1xz98XqQlWiBmLuzLe/wKSHZZIVnbi/mskBpkVuP/UvQvwG3XQdAToZyeGT4ASRU3xwX8H3Av5RfiHR0AQR7D6wAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;GitHub&quot;
+        title=&quot;GitHub&quot;
+        src=&quot;/blog/static/e1ade34e5b58ffa29df0c6cd91ce588e/eafa0/github.png&quot;
+        srcset=&quot;/blog/static/e1ade34e5b58ffa29df0c6cd91ce588e/6bdcf/github.png 315w,
+/blog/static/e1ade34e5b58ffa29df0c6cd91ce588e/f058b/github.png 630w,
+/blog/static/e1ade34e5b58ffa29df0c6cd91ce588e/eafa0/github.png 939w&quot;
+        sizes=&quot;(max-width: 939px) 100vw, 939px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; Sidecar container has a cron that runs the task in an interval and the bot pushes the data for &lt;strong&gt;GitHub Pages&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;How can I monitor the server?&lt;/h3&gt;
+&lt;p&gt;Introducing &lt;code class=&quot;language-text&quot;&gt;Grafana&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Prometheus&lt;/code&gt;, and &lt;code class=&quot;language-text&quot;&gt;AlertManager&lt;/code&gt; to our infrastructure.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 500px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/47496d2cf58945dce019fe66cd080ec1/0b533/grafana_prometheus.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 44.12698412698413%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAAsTAAALEwEAmpwYAAABVklEQVQoz52RPU/CUBSG+5McmfwNOrixOJg4spm4OZr4EQ1YYzSECANKNDVx0UAZSJQ0hJZQSi+pTQuK9IIWK9LK/TAUgqCL8c0ZbnLf9zzn3MvQ3yKE/k3M5IThk5c5R0CcCRNMKf18qNj76/bumicL092ZCa0XDrmpbZeLkG577PBN5KPXWp53EnvvV7Hm0hx+sSZ5hhBMKCVQ8S5XENQGwgmGyvgaD7FetfgcDKB2k3j9VjDQv7vx50QjMvGLInkTl1dRZYO4r6NhRu2R07VCi87FsXMdh6GFgfX4TbZt2zQN3+1Z9Xv3TcdDJJreGWsyuj3D6RRWizM75/P5SOQgmUyy7OHWTphljxLx02g0ynEcpbTeaIiiWDNMAECxUJAUUAPAMMxxGELI87yqqplMulQqZbO8JEm5XE4Qhg/b6XQ0TVOrVcUvuVyWZVnX9Z9f9Q99AfJe6JZqgzI6AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;grafana and prometheus&quot;
+        title=&quot;grafana and prometheus&quot;
+        src=&quot;/blog/static/47496d2cf58945dce019fe66cd080ec1/0b533/grafana_prometheus.png&quot;
+        srcset=&quot;/blog/static/47496d2cf58945dce019fe66cd080ec1/6bdcf/grafana_prometheus.png 315w,
+/blog/static/47496d2cf58945dce019fe66cd080ec1/0b533/grafana_prometheus.png 500w&quot;
+        sizes=&quot;(max-width: 500px) 100vw, 500px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;Grafana&lt;/strong&gt;, &lt;strong&gt;Prometheus&lt;/strong&gt;, and &lt;strong&gt;AlertManager&lt;/strong&gt; are open-source software, and together they form a monitoring system with a dimensional data model, flexible query language, efficient time-series database, and modern alerting approach.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/stefanprodan/dockprom&quot;&gt;dockprom&lt;/a&gt; spins up all three services in one command. Prometheus scrapes endpoints and stores the data for Grafana visualization.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1260px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/56d39c4c7d8f90e5d6e97ee6c51f181e/c2d13/smp.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 50.79365079365079%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsTAAALEwEAmpwYAAABoElEQVQozz2Qa47bMAyEfYVNbMSSTD1ISqIkr+3E2ey2aFGge4Te/y6Fs0WBD8SQf2aGnbWoNJ579XK6nM5jP+jTefxHP557NQxmGMzL6dL3+qKgH8yorPV47nUXWOKyUGtBSpDiYobAliJQMh5H5aaGo3VAtH7efM7g8OPz9vvP97aXzlPm2mJ7zcsapHCdUWpIBaU6TqNyF3L9CJC4/drUFJji+mMNmyw/l85YxJxDSo7ZRw4xWSQIBB61DZ64tVhblMpS0ryIVM6FU42T852xoV1f223Nr02WVpY5zS3NTZYZs3BK74/ytufHPd93uT/FvufrLXPiTkOYPBmHGrxxYXKkJq/BK/DK+KN/SsDRcnQpHx/haGNyMU2BDmeZvwwrF/kPiTiKjmJqjeToxXIcQ4qUM+ajXafAAxIQa+u1PbS2XoH7WvUUlPGjdhdlNaCxqIw7wh5JQ2dD3L59LO+Psm3zfW9vt3rdyrrW6ybLCp6N80BkI/scsWaahWaJS3GROyS2PinjDaCZngAeJkCBmsNkiQARiA7wqZ/TePwLFH1SnAf/V/wAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;smp&quot;
+        title=&quot;smp&quot;
+        src=&quot;/blog/static/56d39c4c7d8f90e5d6e97ee6c51f181e/78612/smp.png&quot;
+        srcset=&quot;/blog/static/56d39c4c7d8f90e5d6e97ee6c51f181e/6bdcf/smp.png 315w,
+/blog/static/56d39c4c7d8f90e5d6e97ee6c51f181e/f058b/smp.png 630w,
+/blog/static/56d39c4c7d8f90e5d6e97ee6c51f181e/78612/smp.png 1260w,
+/blog/static/56d39c4c7d8f90e5d6e97ee6c51f181e/7ca1f/smp.png 1890w,
+/blog/static/56d39c4c7d8f90e5d6e97ee6c51f181e/9b204/smp.png 2520w,
+/blog/static/56d39c4c7d8f90e5d6e97ee6c51f181e/c2d13/smp.png 2560w&quot;
+        sizes=&quot;(max-width: 1260px) 100vw, 1260px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; Minecraft Prometheus Exporter plugin exports Minecraft stats for Prometheus&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1260px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/aa969be36c45fa87d2a8e931512a8b23/c2d13/velocity.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 50.79365079365079%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsTAAALEwEAmpwYAAABr0lEQVQoz22PTWsTURSG5z80mdy5956v+zHfmUkyadKoKeqmC3URVBBBNBa7aLAF8f8jE9qd8CyeF855DydBFKV5muqLSTaZ6lTBxST7L5OpnqQ6VXamYZZBqmwCHJTBmabMkjKUWR7lyceoDD3DZ0jpcWBmMCHxbQNVhSwERNpSqvlc8YQae1mjaJLnUjYkGXCCTPsr++rKXg6w7KFtMEasSvQBLVKGQjFQEfN13ew7KiOV0bVFe73gOo7L/RyHJewuYb2C7RpebGAzwGaNiw59k/fXQ7Wdd6+H4WZT7+bNrpvvl8PNNh/miQG2KBmIsmJRgL2yoiyjiIRIEg2Ituc/M8rMiDKsjViMiQYBJEBwDiyg88QC3oEyNFWkMWQUrFQagzJjxLiYpoqrjcaQkPN3P+XxxH8f6PEk97/odMd/7vHhd3j5Jhq3wHJN+WB9p7nMrBiuDDiIS2VdAuzefek/HRcfb1eff/SHb/3h++JwXH091u8/eCBB8RwiuoAyHsfQUrF0rlIaEhIxKJYEWAyy5VFAhH1Z1LWPZVG0Ma9j0YrLDRehf6t9l/tGG/oHWPlWOhiBjVAAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;velocity&quot;
+        title=&quot;velocity&quot;
+        src=&quot;/blog/static/aa969be36c45fa87d2a8e931512a8b23/78612/velocity.png&quot;
+        srcset=&quot;/blog/static/aa969be36c45fa87d2a8e931512a8b23/6bdcf/velocity.png 315w,
+/blog/static/aa969be36c45fa87d2a8e931512a8b23/f058b/velocity.png 630w,
+/blog/static/aa969be36c45fa87d2a8e931512a8b23/78612/velocity.png 1260w,
+/blog/static/aa969be36c45fa87d2a8e931512a8b23/7ca1f/velocity.png 1890w,
+/blog/static/aa969be36c45fa87d2a8e931512a8b23/9b204/velocity.png 2520w,
+/blog/static/aa969be36c45fa87d2a8e931512a8b23/c2d13/velocity.png 2560w&quot;
+        sizes=&quot;(max-width: 1260px) 100vw, 1260px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; Bungeecord Prometheus Exporter plugin exports Bungeecord/Velocity stats for Prometheus&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 807px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/5462d7862dfedfa8f76b3f2840398b7c/d2a60/alerting.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 75.87301587301589%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAC4jAAAuIwF4pT92AAACSElEQVQ4y4WU2W7bMBBF/UGtY0kUF1GiVlM7JcdLgiQFiqL9gP7/wy1IL5HdAn0YDKHlzNyZK62efAqPcPihQKl71P2EgMYgLAah5whuIW/3Qp64c1o00K1BkmmY+YjV2gvhBQw+ieDRFCRS8AkHofIMvIBDrkBFipAlICxx58dgUYbVehPiyzoAZRGmqYLKt8iqNzDZuC6uIBEXEHEJLvO/QLdiXGHlE+EqxkmM37+26LXGuPuOohqRpCVUtsWTx/B1E8IWX3sUG5/durSQZaxCphCrCoQpbDyJOi3x7ftPHE+vOL2843h6Q9sZdP2Mbtih7Sdkub4DLru9SfZIBC4UqjjHOJ2g6x66GVwexmdMuwPqdoBV9NjhHfDJo06KH0ZgPEEVpxjnI5p2RNMZF+O0h5n2qNsRTCj3/G0xFniBsiXQdkh5giIp0Qx71922GVDqDlXdo6oHZEUNKhTsOxYYXmcoUgRcYcOSs2QrIQglGFPoagMpNTx7LRDwAwFii1nrUOky5+ocdvu2M66QyhxzrheSSQQmU8i6QqN7aN2jyDXKokYsM3gehe8x+LaQnSERDsgXQPMIDCKFdGfw8fEDp9cPHF/eXZ6fT+iGGYPZo+kmN4IoKRBcZS8lL4HEdji0MObgAHUzullay0zzAWY+gEXq7IpAXDb7uZT7LV+A0dDAjM93wLabHND6MbUepNKZfWnsfwLDKEXcddC1cbLKbXeJ1mWVVRAyQxBG8AL+fyDhKbpmQKwaZ6Pg7k/zGc4yD5/cFfgHGuwCwH/KjVkAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;alerting&quot;
+        title=&quot;alerting&quot;
+        src=&quot;/blog/static/5462d7862dfedfa8f76b3f2840398b7c/d2a60/alerting.png&quot;
+        srcset=&quot;/blog/static/5462d7862dfedfa8f76b3f2840398b7c/6bdcf/alerting.png 315w,
+/blog/static/5462d7862dfedfa8f76b3f2840398b7c/f058b/alerting.png 630w,
+/blog/static/5462d7862dfedfa8f76b3f2840398b7c/d2a60/alerting.png 807w&quot;
+        sizes=&quot;(max-width: 807px) 100vw, 807px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; AlertManager notifies discord, and sends me a text message when the server is down&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1260px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/9cca1be2db84ee44e9dd435ef52b971a/9b056/wither.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 44.44444444444444%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABbUlEQVQoz0VRW27cMAz0IQLsriWLTz12nRQN+tf732sC0mnzQYxJDofUeDtsgn2B/AnxBfEndnIUMpRAdtyrYCfDrTLe9obb3nDfCbeM6zvzR8P21098ysQ7dTwzHH90YTTDb114ccfJAx8ycVLHJ3WYOXZV6DlRVeG/XqAxYB8L27lODJugphDxxOETFpeTQthBZD89mzjYIGNB5gL7hMyJKgYaHRu9JqrHRkGbjmKG9uyoaqjDcAxHdUVbHcUN9BooouA1Mg61xLiUZsdWTZMgY6JZeKa58RCDrJVINkDesTdBIUEVTTzEM5p1FNLkbTxji6N5T4zTm3sSWu85fA1dteinICtKU+yH5Gzkce3GfYJ8YCcB9ZHDRSQJUQtSbE6f2C6O+n+BR2PwmDkXNm1NHY+D09wo5rNCrEleE70UoJ88Ls36Pz5981mxHfFDSK5nsqa5EVnr/i1ouBfCYRdG/14pvS8s1xKWFP0Ck0z4/LVB6oYAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;wither&quot;
+        title=&quot;wither&quot;
+        src=&quot;/blog/static/9cca1be2db84ee44e9dd435ef52b971a/78612/wither.png&quot;
+        srcset=&quot;/blog/static/9cca1be2db84ee44e9dd435ef52b971a/6bdcf/wither.png 315w,
+/blog/static/9cca1be2db84ee44e9dd435ef52b971a/f058b/wither.png 630w,
+/blog/static/9cca1be2db84ee44e9dd435ef52b971a/78612/wither.png 1260w,
+/blog/static/9cca1be2db84ee44e9dd435ef52b971a/7ca1f/wither.png 1890w,
+/blog/static/9cca1be2db84ee44e9dd435ef52b971a/9b056/wither.png 2419w&quot;
+        sizes=&quot;(max-width: 1260px) 100vw, 1260px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; I made the dashboard publicly accessible for players so they also have insights. In this case, an unbounded wither farm generated over 3K skulls and is causing server lag&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;How can I search through my server logs?&lt;/h3&gt;
+&lt;p&gt;Minecraft server uses log4j and outputs the log to &lt;code class=&quot;language-text&quot;&gt;latest.log&lt;/code&gt;, and also compresses logs into gzip archive files.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;-rw-rw-r-- 1 admin admin   3355 Jan  1 00:49 2022-01-01-1.log.gz
+-rw-rw-r-- 1 admin admin   2902 Jan  1 00:50 2022-01-01-2.log.gz
+-rw-rw-r-- 1 admin admin  45860 Jan  2 00:06 2022-01-01-3.log.gz
+-rw-rw-r-- 1 admin admin   1728 Jan  2 01:18 2022-01-02-1.log.gz
+-rw-rw-r-- 1 admin admin 108339 Jan  3 00:53 2022-01-02-2.log.gz
+-rw-rw-r-- 1 admin admin  33147 Jan  4 00:01 2022-01-03-1.log.gz
+-rw-rw-r-- 1 admin admin  68437 Jan  5 00:05 2022-01-04-1.log.gz
+-rw-rw-r-- 1 admin admin  24910 Jan  5 02:52 2022-01-05-1.log.gz
+-rw-rw-r-- 1 admin admin  18207 Jan  5 06:39 2022-01-05-2.log.gz
+-rw-rw-r-- 1 admin admin  19774 Jan  6 00:00 2022-01-05-3.log.gz
+-rw-rw-r-- 1 admin admin   1423 Jan  6 00:00 2022-01-06-1.log.gz
+-rw-rw-r-- 1 admin admin  37541 Jan  7 00:01 2022-01-06-2.log.gz
+-rw-rw-r-- 1 admin admin  53038 Jan  7 20:36 2022-01-07-1.log.gz
+-rw-rw-r-- 1 admin admin   4704 Jan  8 00:28 2022-01-07-2.log.gz
+-rw-rw-r-- 1 admin admin  14767 Jan  9 01:38 2022-01-08-1.log.gz
+-rw-rw-r-- 1 admin admin  18577 Jan  9 03:27 2022-01-09-1.log.gz
+-rw-rw-r-- 1 admin admin  46618 Jan  9 07:08 2022-01-09-2.log.gz
+-rw-rw-r-- 1 admin admin  21783 Jan  9 17:13 2022-01-09-3.log.gz
+-rw-rw-r-- 1 admin admin   6616 Jan 10 00:04 2022-01-09-4.log.gz
+-rw-rw-r-- 1 admin admin  23406 Jan 11 00:00 2022-01-10-1.log.gz&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; It is very difficult to search through the Minecraft server log because they are segmented.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Introducing ELK stack to our infrastructure. Elasticsearch is a search and analytics engine. Logstash is a server‑side data processing pipeline that ingests data from multiple sources simultaneously, transforms it, and then sends it to a “stash” like Elasticsearch. Kibana lets users visualize data with charts and graphs in Elasticsearch.&lt;/p&gt;
+&lt;p&gt;You can deploy ELK stack in one command using &lt;a href=&quot;https://github.com/deviantony/docker-elk&quot;&gt;docker-elk&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 770px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/9d1f8af96696c1f93a7c97123815fd0a/f4b77/elk.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 72.06349206349208%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACNUlEQVQ4y32Ty27TUBCGveRFeAEkHoANj4B4A/ZIIFas2HZRsQJxW7DoAlVISICgKqUqbaloA6FCSasktRM7ce34kvh+4n7Ix3KapIXFSOOZ8X/mn/lHieOYyqIomloQBGRZxngcEIbhhXz1Pft/YcpioCgSE4GmaRwe/qZ2sM9gYJKm6RzgZSYBZ1+rfMcZEqc5a6tLHO6v4XrBNC9EJsGTJCFNk6lfYSiVUxakxEmC6zi0TlRurDzm0cYHSDKCKEQIwc7uHs3mMZZl0x8MZPemaTIajc4pFzPq9nQajSN6usEkz3EtiytvXnN/exMywSgsAQ9qv2i1O3ieh23bWJbF0HHkzOcou67HiaqViSQhiyPe7mzSMbqcTQRRXFLO81wua9bSf1H2/RGWbcvXc0BtD2l3LE60PnpPlx2qmibzvu/juK70ZxejLErA9z1O7TGt2gv+vL/Kp5fX+Li6hOe5TITg+94P2u2OnJ+qagxMc05GyixY2WlEnELj2zLW+nW6G7fZXX+G0WshxIQwLHVZMKpsFkNZlExRXGxx4EVs1Y/RRxlnQByVdXJmU9mkLDakzF9JSJbl/Kp/ZuXuPb7cfEjtwXMMtSsXVVDe+LrF5ta2nLXR7zMejy92eB6ICIOYev0d+8uvUG895eedJ+gdjTRL5TabR8c0mke4nsfpqTWVywXAMljROsONQhpGB923SNKEeHopQl7LZZQv7bBcTIw7dNC1LqbRl9IoAP53w1WHfwGIHB0JOBHQ6gAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;elk&quot;
+        title=&quot;elk&quot;
+        src=&quot;/blog/static/9d1f8af96696c1f93a7c97123815fd0a/f4b77/elk.png&quot;
+        srcset=&quot;/blog/static/9d1f8af96696c1f93a7c97123815fd0a/6bdcf/elk.png 315w,
+/blog/static/9d1f8af96696c1f93a7c97123815fd0a/f058b/elk.png 630w,
+/blog/static/9d1f8af96696c1f93a7c97123815fd0a/f4b77/elk.png 770w&quot;
+        sizes=&quot;(max-width: 770px) 100vw, 770px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; “ELK” is the acronym for three open source projects: Elasticsearch, Logstash, and Kibana.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;There are many ways to send a log to ElasticSearch. You could use &lt;code class=&quot;language-text&quot;&gt;filebeat&lt;/code&gt; to tail the &lt;code class=&quot;language-text&quot;&gt;latest.log&lt;/code&gt;, or use a &lt;code class=&quot;language-text&quot;&gt;logstash&lt;/code&gt; module that works with Minecraft server log4j.&lt;/p&gt;
+&lt;p&gt;However, we want something generic that works with our containerized Minecraft server or any containers. So we use a logstash agent to send docker container logs to &lt;code class=&quot;language-text&quot;&gt;Redis&lt;/code&gt; for temporary storage. And a central logstash agent will pull from &lt;code class=&quot;language-text&quot;&gt;Redis&lt;/code&gt; and push them to &lt;code class=&quot;language-text&quot;&gt;ElasticSearch&lt;/code&gt;. Finally, we have &lt;code class=&quot;language-text&quot;&gt;Kibana&lt;/code&gt; that reads from &lt;code class=&quot;language-text&quot;&gt;ElasticSearch&lt;/code&gt; and visualizes the logs&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1260px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/c8615b6d26d7b7a8160fd46758d8f8d4/c2d13/kibana.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 50.79365079365079%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAC4jAAAuIwF4pT92AAABhUlEQVQoz6WQy27bQAxF9eH9gAIBChiIX7Kd/Eb+JKs0izZJ5Yes0Qw577nFUIq7aHcd4IAgJBySt1kcHvFtucNmu8d6s8fqxk5qu3/Etn3AenvAZnuQf5brHe5XLe5XOyyWrfB10eLL3QYNJ6Dg/18fgafXhObX8Yyf7x3UaNBfFTQzQoxQTBgt46gVQoggZ+FCgPUenR7A3iHFiCsZvPRH5BSB5NFclQZbjxAzRkN4H3qQtfh+7tCpAa+XDooIPy4nXEaFkxrwfHzDWY9g53DSSvqRGWQdmo+Lwnl06E0AsYVjC0Mk1c69915yyTmj5DzdKH255VVKgQ8RzUgWzie4kERIdRIztDEiZmsRYxLq6TUOH4JQhZVUB5Ui35tBGVgX5GQREgvGEIhIKjMjxigbpk9SvgkrN6E2DOfr1HnDKvnETJAIE3IpIv0jyn8LlaZZmMFsZRuexVVknZtPjkKYq5ASSpnyq0+EbINsVzE0ZVcZtZ43NCK31iGEMOX4D+qAOvw337r1m40EltkAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;kibana&quot;
+        title=&quot;kibana&quot;
+        src=&quot;/blog/static/c8615b6d26d7b7a8160fd46758d8f8d4/78612/kibana.png&quot;
+        srcset=&quot;/blog/static/c8615b6d26d7b7a8160fd46758d8f8d4/6bdcf/kibana.png 315w,
+/blog/static/c8615b6d26d7b7a8160fd46758d8f8d4/f058b/kibana.png 630w,
+/blog/static/c8615b6d26d7b7a8160fd46758d8f8d4/78612/kibana.png 1260w,
+/blog/static/c8615b6d26d7b7a8160fd46758d8f8d4/7ca1f/kibana.png 1890w,
+/blog/static/c8615b6d26d7b7a8160fd46758d8f8d4/9b204/kibana.png 2520w,
+/blog/static/c8615b6d26d7b7a8160fd46758d8f8d4/c2d13/kibana.png 2560w&quot;
+        sizes=&quot;(max-width: 1260px) 100vw, 1260px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; You can visualize, filter, and search Minecraft server logs&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;How do I setup all of these technologies?&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Ansible&lt;/strong&gt; does just that. It is an open-source software provisioning, configuration management, and application-deployment tool enabling infrastructure as code&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1260px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/eb568520c8a3ae37d925cba49fa4a83f/d2782/ansible.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 77.46031746031747%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABrklEQVQ4y4VUS67bMAx899/1IL1PgQJdFF20TixZ/7+mIC05SvKKGqBlAeJohhz6A0AHvXqfK0pryCPSCPpWKeGmFaRzaHS8dz6/5MqPV0A6GGq9AGeU3hlwOw4Ia1HP4/OZ6e+AxMbXcgH5WmFLgQwed6MhjMFuDA5rEWpBrJVIPDNcaVPyZwxdrdi9xx8hcFMKrhRW81/JR07MKi+1I3l+AJLkuzG8Hymce0leNrzeYmQZj9o11NYQWsMRPDYpmWE4pZ6ArzUc5e0EsKfEXZ4xgW3OEM4NhhomRr6ovUpOKXXrHO+//vqJL9+/IbXKLCmoQSTPpMTdJXbUFBXCpeQJcJW8p4gf1nDtJmAZ3wR6OIddKQit+YIB9rlt5ipSYsAptywG3527GLqcry4vTnkwnFcQYHjpMkWkpsSI30IwYF6MvWD824dUx7ywDIttdjb1wzaLynfA2GYjCoOToWl2N62xaYXtkLgrBWntOS2lkJI+Jubd2GRimoL1x0BzTD6UMTCYcJZL0Efyk7FXwCmBWBIoddaXAh08e3A3mru8aw3lPWwISOflfZRH/gX+BZkcuxhHZQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;ansible&quot;
+        title=&quot;ansible&quot;
+        src=&quot;/blog/static/eb568520c8a3ae37d925cba49fa4a83f/78612/ansible.png&quot;
+        srcset=&quot;/blog/static/eb568520c8a3ae37d925cba49fa4a83f/6bdcf/ansible.png 315w,
+/blog/static/eb568520c8a3ae37d925cba49fa4a83f/f058b/ansible.png 630w,
+/blog/static/eb568520c8a3ae37d925cba49fa4a83f/78612/ansible.png 1260w,
+/blog/static/eb568520c8a3ae37d925cba49fa4a83f/d2782/ansible.png 1864w&quot;
+        sizes=&quot;(max-width: 1260px) 100vw, 1260px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;Ansible&lt;/strong&gt; automates setting up everything&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;How do I fix crashes in production?&lt;/h3&gt;
+&lt;p&gt;Sometimes everything runs well in the local development environment, but the server crashes constantly for the production environment. Luckily we had set up many metrics that can help us. The first step is to use &lt;strong&gt;Kibana&lt;/strong&gt; to find any errors.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1260px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/e5bfa326be76900d871bcd933c6d87d6/c2d13/error.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 50.79365079365079%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsTAAALEwEAmpwYAAABUklEQVQoz5VRy04cQQzsD+cHwgUhsuwssxvxG/xJAicuCWGz0Txst9uvQZ6VAOWWktWWulXlKne5Ptxfbfrd7rDtDttu/179/n7Xf+vuDl0+7b9u+82239z2N7f9zab/cn13cdkVssWW/0Cs558aD89WXo+nn79exwkRSc3UzMz13MxF9QjTWIlaC897Nz/CJCpLWBnGubKIhoiqqkhTnd1dREUEiJ5Pv1+G0wCQwu4RMTaSVby8/J1OcxtIuQlRRRyJnlStVq7MtXLjlpVIeXdP8xHmUWZkFmsarQlSBRwQfrSmlTlZ3NKReaxZIz7KYynDBLWJWpLXyQPRk5kjEiIBIAAiIjOranyCR5Q5ufZOhiQ/pm3OsWl+XYm5r3k/JmfmcSZueibjp8yUqIjZmNs/zLTtS1l1XSy4CQDNMCB+V/UZYPWcIKqUnyVpYV35ud4AGBcwyZdotDQAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;error&quot;
+        title=&quot;error&quot;
+        src=&quot;/blog/static/e5bfa326be76900d871bcd933c6d87d6/78612/error.png&quot;
+        srcset=&quot;/blog/static/e5bfa326be76900d871bcd933c6d87d6/6bdcf/error.png 315w,
+/blog/static/e5bfa326be76900d871bcd933c6d87d6/f058b/error.png 630w,
+/blog/static/e5bfa326be76900d871bcd933c6d87d6/78612/error.png 1260w,
+/blog/static/e5bfa326be76900d871bcd933c6d87d6/7ca1f/error.png 1890w,
+/blog/static/e5bfa326be76900d871bcd933c6d87d6/9b204/error.png 2520w,
+/blog/static/e5bfa326be76900d871bcd933c6d87d6/c2d13/error.png 2560w&quot;
+        sizes=&quot;(max-width: 1260px) 100vw, 1260px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; Searching for errors for the past 12 hours in the log&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1081px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/80342d8ee8d4a0484d0d5c3e955dd551/71ee9/error2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 68.88888888888889%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABxElEQVQ4y12TaXLkIAyFff+zpCaZVH7mPpOtbUDsYF5KYmlPu0rFYpCePonNmA/s+1+UEtEakFKCMQRrnRjPDdEaldLQ2qwzOReklJFzxnme2Kz9glKvqDWBv1wyyFpYxw4tiGiNbFprKKVAZGXfOYcQIkKMw6H7gtJv4rABKKXIIee8jCSX/FqLE+vgfYDzHrVWXL+NiFN+Rq2xK8x5RO/O7HAoClnpg+oYo9yJKYnKjRnebi/CkD9myJzYOkcrvEg4GtmnC0u2PtfYD8UKP3Ecl6LkLBf5YIwJ3t9TZeW8v9Ty2pg15/3Num/oybBxUUpP03v4EISVtR2B7PmwUudAHJCL0VrD2dpIeX95UHhX0NWN9jG0lHYMdhWt1IpSKjal/+H7589/fXgcSqwXo6d1Z9b58X/en/04M5E+PNTrctirTNKHnd+o8Kj8VCsqieQ/p7pS7o39thq7XBiGwXA2sV3w+5yDc5ri7JwM6RP7YJhSESdmVJGjT1Wzhfb9kJfBT26q4qKIw3MW5faEUgKs89KoXBh+nxydFQvwAT3Jm22CZzq52ubcD4x5RwgW3kfhxh3PqfKz4ufYBiOxsZ4pPtovalg7bOZXFO0AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;error2&quot;
+        title=&quot;error2&quot;
+        src=&quot;/blog/static/80342d8ee8d4a0484d0d5c3e955dd551/71ee9/error2.png&quot;
+        srcset=&quot;/blog/static/80342d8ee8d4a0484d0d5c3e955dd551/6bdcf/error2.png 315w,
+/blog/static/80342d8ee8d4a0484d0d5c3e955dd551/f058b/error2.png 630w,
+/blog/static/80342d8ee8d4a0484d0d5c3e955dd551/71ee9/error2.png 1081w&quot;
+        sizes=&quot;(max-width: 1081px) 100vw, 1081px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; Java is hung when opening files and crashed the server&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1172px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/cce89fa0d19e7f554cadff6bb85e1a37/511f0/error3.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 70.79365079365078%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABrklEQVQ4y22TC27EIAxEc/+Dbdttu2doL7AJ2IZ8gKlsPslKjYSAhDzG9nhiPjDPXyD6QAGQcwIxw3sC60zU1gIignMe3nuIiH3b9x2w/4qNSSRhWb7BfEcpQMoJLGJQkdBAbHtd973OClzXFdu2IaVcgSwZy3IH8W0AO0jCf0Cu+wbVM3FdkfIAXhReQyY6ARfINfx6CZvKECKOI2GSkLE4BX60XCQEVSZicx8GILbc9dBNodRL9YxGNkJmvg3gNU+nQhoKuzKFpJSQSzmLEkKG9w+IfFZgyeO2GOJY6wgxGjTGaMqO47B/SimWfx0T8YHn8xOe3ofC0zYycuecM7uobapSXy9phQvt8inGAqIHQrgPoCrQjzrb+rJXZf19ztnU6ay20UpPbArvIHo7FQ4zd3tUhcviqjoiA6qpt23Hvh8tbDN2hnOPF2NffSghDttwq+jV4GbsfTeVw4ezGptuw4d2uHWKjt5+1nrevxi7qru0ngG1l/ndgKmFXD13dooWQ0N+znNNCZGF2ztkANdNQ/zFuv4gZ2DbVgsjxtqjvVf7WotS8Pr0/GkO/wDqRjxldS7aNwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;error3&quot;
+        title=&quot;error3&quot;
+        src=&quot;/blog/static/cce89fa0d19e7f554cadff6bb85e1a37/511f0/error3.png&quot;
+        srcset=&quot;/blog/static/cce89fa0d19e7f554cadff6bb85e1a37/6bdcf/error3.png 315w,
+/blog/static/cce89fa0d19e7f554cadff6bb85e1a37/f058b/error3.png 630w,
+/blog/static/cce89fa0d19e7f554cadff6bb85e1a37/511f0/error3.png 1172w&quot;
+        sizes=&quot;(max-width: 1172px) 100vw, 1172px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; Error spiked at 20:30, 17:05, 16:25, and 15:48&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;After looking at various metrics for CPU, memory, network, and storage, we found the issue in the storage&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1260px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/1ea8565320d5241ecc9620d653c8824a/a4f81/aws.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 39.04761904761905%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAC4jAAAuIwF4pT92AAABJUlEQVQoz1WSi27DMAhF8/9fuB9YtWlTkzq2eRhyJ4jTdkjICPvyOMlS9h2PUtBax2WHO5gZpZR0FTnzxwEzR+8doStlh8y7MB0Di5nh3cwP+AG4e1TIXBODzzhsjPGMfabVPM+ltg4SxVoJP4+O+95Ballwbx1fa8XHbcWjESpJNlRV1E6pu90r1j10lE2XEIqOHDdcRGHucwWD6oCb5RsWhc+R4u7SiWq+CyRL6x1ElFwijmR4TBH5YPluF994Hy7C/1AsIQxWMalN94Q/0FnAatiaYueBJuO58sWxsoJjE/Nzwk6MxorPe8X31pJhl5FNiDlXaiQgFpTGZ9MxUBpha5y6rRJ+S89mk6FOPxn6ZBh/QEwSZxSJ+JhfWyfT2MTtdfcHgEBzxKGV/aEAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;aws&quot;
+        title=&quot;aws&quot;
+        src=&quot;/blog/static/1ea8565320d5241ecc9620d653c8824a/78612/aws.png&quot;
+        srcset=&quot;/blog/static/1ea8565320d5241ecc9620d653c8824a/6bdcf/aws.png 315w,
+/blog/static/1ea8565320d5241ecc9620d653c8824a/f058b/aws.png 630w,
+/blog/static/1ea8565320d5241ecc9620d653c8824a/78612/aws.png 1260w,
+/blog/static/1ea8565320d5241ecc9620d653c8824a/a4f81/aws.png 1508w&quot;
+        sizes=&quot;(max-width: 1260px) 100vw, 1260px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; Read bandwidth also spiked at 20:30, 17:05, 16:25, and 15:48&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Turns out when the operating system is running out of memory, so it writes to a swapfile. A swap is a space on a disk that is used when the amount of physical RAM is full, but the speed of the disk just can’t keep up. When swapfile hijacked the storage I/O, Java I/O threads will just hang and time out. Therefore, the solution was to increase the ram of the operating system or decrease the ram allocation of other containers.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Fun Fact: RAM is 4 to 7 times faster than a Solid State Drive&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;The End&lt;/h2&gt;
+&lt;p&gt;You made it to the end! This over-engineered server does the same thing as you were to launch the jar directly and it is still a vanilla server haha. If you are interested in a tutorial, free feel to leave a comment. Also suggestions and feedback are appreciated!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Enable Cassandra Authentication]]></title><description><![CDATA[Enable Cassandra Database Authentication Edit  Set  to  Restart the service Use default super user to log into  Create a new super user…]]></description><link>https://weihao.github.io/blog/how-to-enable-cassandra-authentication/</link><guid isPermaLink="false">https://weihao.github.io/blog/how-to-enable-cassandra-authentication/</guid><pubDate>Wed, 22 Jan 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Enable Cassandra Database Authentication&lt;/h2&gt;
+&lt;p&gt;Edit &lt;code class=&quot;language-text&quot;&gt;cassandra.yaml&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;nano /etc/cassandra/cassandra.yaml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Set &lt;code class=&quot;language-text&quot;&gt;authenticator&lt;/code&gt; to &lt;code class=&quot;language-text&quot;&gt;PasswordAuthenticator&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;authenticator: PasswordAuthenticator&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Restart the service&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Use default super user to log into &lt;code class=&quot;language-text&quot;&gt;cqlsh&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;cqlsh -u cassandra -p cassandra&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Create a new super user&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;CREATE ROLE prod WITH SUPERUSER = true AND LOGIN = true AND PASSWORD = &amp;#39;prod&amp;#39;;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Disable default super user&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;ALTER ROLE cassandra WITH SUPERUSER = false AND LOGIN = false;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Use Docker Without Sudo]]></title><description><![CDATA[Use Docker Without Sudo This command adds you into docker group, so you could run docker command without sudo. The user you added has to log…]]></description><link>https://weihao.github.io/blog/how-to-use-docker-without-sudo/</link><guid isPermaLink="false">https://weihao.github.io/blog/how-to-use-docker-without-sudo/</guid><pubDate>Wed, 22 Jan 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Use Docker Without Sudo&lt;/h2&gt;
+&lt;p&gt;This command adds you into docker group, so you could run docker command without sudo.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;sudo usermod -aG docker $USER&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The user you added has to &lt;strong&gt;log out and log back in&lt;/strong&gt; for it to work.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Enable Redis Authentication]]></title><description><![CDATA[Enable Redis Authentication Enable redis authentication password. Test authentication password. If it returns , then it is working.]]></description><link>https://weihao.github.io/blog/how-to-enable-redis-authentication/</link><guid isPermaLink="false">https://weihao.github.io/blog/how-to-enable-redis-authentication/</guid><pubDate>Wed, 22 Jan 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Enable Redis Authentication&lt;/h2&gt;
+&lt;p&gt;Enable redis authentication password.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;redis-cli
+CONFIG SET requirepass your_secret_password&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Test authentication password.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;redis-cli
+AUTH your_secret_password&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;If it returns &lt;code class=&quot;language-text&quot;&gt;OK&lt;/code&gt;, then it is working.&lt;/p&gt;</content:encoded></item></channel></rss>

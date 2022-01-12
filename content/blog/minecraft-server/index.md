@@ -1,5 +1,5 @@
 ---
-title: Building a Minecraft Server With State of the Art Technologies
+title: Building Infrastructure Around Minecraft Server
 date: "2022-01-01T00:00:00Z"
 description: "Over-engineering a Minecraft server sounds fun!"
 ---

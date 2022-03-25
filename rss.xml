@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://weihao.github.io/blog</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 12 Jan 2022 00:47:22 GMT</lastBuildDate><item><title><![CDATA[Building Infrastructure Around Minecraft Server]]></title><description><![CDATA[Intro Minecraft is a great medium to toy around with cutting-edge technologies, and many tutorials talking about them recently. However, in…]]></description><link>https://weihao.github.io/blog/minecraft-server/</link><guid isPermaLink="false">https://weihao.github.io/blog/minecraft-server/</guid><pubDate>Sat, 01 Jan 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Intro&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://weihao.github.io/blog</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 25 Mar 2022 02:50:29 GMT</lastBuildDate><item><title><![CDATA[Building Infrastructure Around Minecraft Server]]></title><description><![CDATA[Intro Minecraft is a great medium to toy around with cutting-edge technologies, and many tutorials talking about them recently. However, in…]]></description><link>https://weihao.github.io/blog/minecraft-server/</link><guid isPermaLink="false">https://weihao.github.io/blog/minecraft-server/</guid><pubDate>Sat, 01 Jan 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Intro&lt;/h2&gt;
 &lt;p&gt;Minecraft is a great medium to toy around with cutting-edge technologies, and many tutorials talking about them recently. However, in this post, we design and deploy them in production which presents more challenges and problem-solving.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
@@ -685,24 +685,24 @@ Minecraft has many containers available and they are well-maintained:&lt;/p&gt;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/blog/static/eb568520c8a3ae37d925cba49fa4a83f/d2782/ansible.png&quot;
+    href=&quot;/blog/static/005101d1f8a769edc981aa61eaa008ce/d2782/ansible.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 77.46031746031747%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABrklEQVQ4y4VUS67bMAx899/1IL1PgQJdFF20TixZ/7+mIC05SvKKGqBlAeJohhz6A0AHvXqfK0pryCPSCPpWKeGmFaRzaHS8dz6/5MqPV0A6GGq9AGeU3hlwOw4Ia1HP4/OZ6e+AxMbXcgH5WmFLgQwed6MhjMFuDA5rEWpBrJVIPDNcaVPyZwxdrdi9xx8hcFMKrhRW81/JR07MKi+1I3l+AJLkuzG8Hymce0leNrzeYmQZj9o11NYQWsMRPDYpmWE4pZ6ArzUc5e0EsKfEXZ4xgW3OEM4NhhomRr6ovUpOKXXrHO+//vqJL9+/IbXKLCmoQSTPpMTdJXbUFBXCpeQJcJW8p4gf1nDtJmAZ3wR6OIddKQit+YIB9rlt5ipSYsAptywG3527GLqcry4vTnkwnFcQYHjpMkWkpsSI30IwYF6MvWD824dUx7ywDIttdjb1wzaLynfA2GYjCoOToWl2N62xaYXtkLgrBWntOS2lkJI+Jubd2GRimoL1x0BzTD6UMTCYcJZL0Efyk7FXwCmBWBIoddaXAh08e3A3mru8aw3lPWwISOflfZRH/gX+BZkcuxhHZQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 77.46031746031747%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABdElEQVQ4y4WUAZKCMAxFvTw38VRcQFEUAVFA2+y8DJ+NsjPrTCzF9vX/JHVnZtn4ylmjvV4vm+fZY5qmNZqmsdPpZNfr1d7vt2l92NvsvoEpJXs8Hiswxu12c+DlclmBy0fbt0CUDMPgIxCe+753Vefz2WEE8Ofz6ZFS+lQYZbMZhQLK9v1+t7qu7Xg8ukrmuPnXMkpkeRxHh2GPdyisqspH5ssW37taDhMfOR0bUkaBCAAUJQJRuAHGAgNhsayq2rJM7gTsus6VEx+Wp2nKLGa+3++tKAq3SqCUohAAAOKAXLZtu6bkA8hkkZ45uSxLXyQgKnkGimVggCneAvu7bTSyGIDsMuoAYFIYqxw65bcoOgKg2gaI8olaFB4OBwfye+zqFfjdh+QKoPIjlbFtAMa2CS63QOVLNwRr9CYgBWDe6baM45jZl1LaNjZtACT+KaASRaRD1w/QImTbh1/N6SqBohIQLQIEq6oy73TwPM95yXXzA7fdj1XzZrzEAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;ansible&quot;
         title=&quot;ansible&quot;
-        src=&quot;/blog/static/eb568520c8a3ae37d925cba49fa4a83f/78612/ansible.png&quot;
-        srcset=&quot;/blog/static/eb568520c8a3ae37d925cba49fa4a83f/6bdcf/ansible.png 315w,
-/blog/static/eb568520c8a3ae37d925cba49fa4a83f/f058b/ansible.png 630w,
-/blog/static/eb568520c8a3ae37d925cba49fa4a83f/78612/ansible.png 1260w,
-/blog/static/eb568520c8a3ae37d925cba49fa4a83f/d2782/ansible.png 1864w&quot;
+        src=&quot;/blog/static/005101d1f8a769edc981aa61eaa008ce/78612/ansible.png&quot;
+        srcset=&quot;/blog/static/005101d1f8a769edc981aa61eaa008ce/6bdcf/ansible.png 315w,
+/blog/static/005101d1f8a769edc981aa61eaa008ce/f058b/ansible.png 630w,
+/blog/static/005101d1f8a769edc981aa61eaa008ce/78612/ansible.png 1260w,
+/blog/static/005101d1f8a769edc981aa61eaa008ce/d2782/ansible.png 1864w&quot;
         sizes=&quot;(max-width: 1260px) 100vw, 1260px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
